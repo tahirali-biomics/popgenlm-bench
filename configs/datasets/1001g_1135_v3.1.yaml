@@ -1,0 +1,71 @@
+dataset_id: 1001g_1135_v3.1
+
+species:
+  scientific_name: Arabidopsis thaliana
+
+reference:
+  assembly: TAIR10
+  coordinate_system: 1-based
+  chromosome_style: numeric
+  declared_in_vcf_header: false
+
+release:
+  project: 1001 Genomes Project
+  release: v3.1
+  level: population
+  variant_calling: SHORE_GATK_intersection
+
+source:
+  filename: 1001genomes_snp-short-indel_only_ACGTN.vcf.gz
+  url: https://1001genomes.org/data/GMI-MPI/releases/v3.1/1001genomes_snp-short-indel_only_ACGTN.vcf.gz
+  sha256: 7f825afb784b2424e35501fd8b88c32a4798013eb9fe762724addfb249007e7a
+  expected_accessions: 1135
+
+vcf:
+  fileformat: VCFv4.1
+  info_fields:
+    - DP
+  format_fields:
+    - GT
+    - GQ
+    - DP
+  filter_ids:
+    - PASS
+    - q30
+    - q25
+  contig_records_in_header: false
+
+genotypes:
+  ploidy: diploid
+  called_encoding_observed:
+    - "0|0"
+    - "1|1"
+  missing_encoding_observed:
+    - "./."
+  allele_counts:
+    derive_from: FORMAT/GT
+    convention: diploid_allele_copies
+    an_definition: called_allele_copies
+    missing_alleles_contribute_to_an: false
+
+primary_benchmark:
+  variant_class: biallelic_SNV
+  canonical_bases:
+    - A
+    - C
+    - G
+    - T
+  require_single_base_ref: true
+  require_single_base_alt: true
+  require_ref_alt_different: true
+  exclude_multiallelic: true
+  exclude_indels: true
+
+paper_reproduction:
+  genotype_representation: binary_accession_matrix
+  rare_definition:
+    minor_accession_count: 1
+  common_definition:
+    minor_allele_frequency_min: 0.05
+  score_orientation:
+    flip_ref_alt_score_when_alt_frequency_gt: 0.5
