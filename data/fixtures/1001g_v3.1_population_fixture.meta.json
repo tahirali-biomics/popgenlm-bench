@@ -1,0 +1,24 @@
+{
+  "dataset_id": "1001g_1135_v3.1",
+  "expected_accessions": 1135,
+  "filters": {
+    "common_maf_min": 0.05,
+    "frequency_class_min_allele_call_rate": 0.9,
+    "missing_class_max_allele_call_rate_exclusive": 0.8,
+    "rare_maf_max_exclusive": 0.01,
+    "require_polymorphic": true,
+    "variant_type": "biallelic canonical SNV",
+    "vcf_filter": "PASS"
+  },
+  "fixture_variants": 20,
+  "selection_classes": [
+    "rare",
+    "alt_major",
+    "missing",
+    "common"
+  ],
+  "sites_scanned": 1176,
+  "source_filename": "1001genomes_snp-short-indel_only_ACGTN.vcf.gz",
+  "source_sha256": "7f825afb784b2424e35501fd8b88c32a4798013eb9fe762724addfb249007e7a",
+  "target_per_class": 5
+}

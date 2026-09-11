@@ -15,6 +15,7 @@ def test_population_counts_homozygotes_and_missing():
     assert result["af_alt"] == pytest.approx(2 / 6)
     assert result["mac"] == 2
     assert result["maf"] == pytest.approx(2 / 6)
+    assert result["allele_call_rate"] == pytest.approx(6 / 8)
 
 
 def test_population_counts_heterozygote():

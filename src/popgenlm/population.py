@@ -46,6 +46,7 @@ def summarize_biallelic_genotypes(genotypes: Iterable[str]) -> dict[str, float |
     af_alt = ac_alt / an
     mac = min(ac_ref, ac_alt)
     maf = mac / an
+    allele_call_rate = an / (2 * n_genotypes)
 
     return {
         "n_genotypes": n_genotypes,
@@ -57,4 +58,5 @@ def summarize_biallelic_genotypes(genotypes: Iterable[str]) -> dict[str, float |
         "af_alt": af_alt,
         "mac": mac,
         "maf": maf,
+        "allele_call_rate": allele_call_rate,
     }
