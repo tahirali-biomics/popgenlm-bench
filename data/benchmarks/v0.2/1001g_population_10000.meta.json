@@ -1,0 +1,90 @@
+{
+  "bcftools": "bcftools 1.15.1",
+  "benchmark_id": "popgenlm_v0.2_1001g_population_10000",
+  "chromosome_config": {
+    "1": {
+      "fasta_chrom": "NC_003070.9",
+      "length": 30427671
+    },
+    "2": {
+      "fasta_chrom": "NC_003071.7",
+      "length": 19698289
+    },
+    "3": {
+      "fasta_chrom": "NC_003074.8",
+      "length": 23459830
+    },
+    "4": {
+      "fasta_chrom": "NC_003075.7",
+      "length": 18585056
+    },
+    "5": {
+      "fasta_chrom": "NC_003076.8",
+      "length": 26975502
+    }
+  },
+  "counts": {
+    "bcftools_pass_biallelic_snp_rows": 10707430,
+    "candidate_population_eligible": 28360,
+    "candidate_records_retrieved": 50000,
+    "candidate_variants": 50000,
+    "metadata_eligible_sites": 10707151,
+    "selected_variants": 10000
+  },
+  "dataset_id": "1001g_1135_v3.1",
+  "eligibility": {
+    "chromosomes": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "edge_padding_excluded": true,
+    "gpn_window_size": 512,
+    "min_allele_call_rate": 0.9,
+    "polymorphic_after_gt_parsing": true,
+    "variant_type": "biallelic canonical nuclear SNV",
+    "vcf_filter": "PASS"
+  },
+  "expected_accessions": 1135,
+  "metadata_excluded": {
+    "left_edge": 134,
+    "right_edge": 145
+  },
+  "output": {
+    "filename": "1001g_population_10000.tsv",
+    "sha256": "cbf535008593ed45fc7ee8619ed7a87c4c3bb2e741e721a4cb97832f3ba5b374"
+  },
+  "population_excluded": {
+    "low_call_rate": 21613,
+    "nonpolymorphic": 27
+  },
+  "release_target": "v0.2.0",
+  "selected_alt_major_count": 246,
+  "selected_chromosome_counts": {
+    "1": 2641,
+    "2": 1672,
+    "3": 1867,
+    "4": 1580,
+    "5": 2240
+  },
+  "selected_frequency_class_counts": {
+    "common": 1230,
+    "low_frequency": 1561,
+    "rare": 7209
+  },
+  "selected_frequency_tie_count": 0,
+  "selection": {
+    "algorithm": "global deterministic SHA256 bottom-k selection",
+    "candidate_count": 50000,
+    "candidate_population_eligible": 28360,
+    "exact_bottom_k_condition_satisfied": true,
+    "metadata_eligible_sites": 10707151,
+    "namespace": "popgenlm-v0.2-population-benchmark-v1",
+    "target_count": 10000,
+    "variant_key": "chrom:pos:ref:alt"
+  },
+  "source_filename": "1001genomes_snp-short-indel_only_ACGTN.vcf.gz",
+  "source_sha256": "7f825afb784b2424e35501fd8b88c32a4798013eb9fe762724addfb249007e7a"
+}
