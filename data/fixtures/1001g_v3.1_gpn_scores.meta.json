@@ -1,0 +1,47 @@
+{
+  "dataset_id": "1001g_1135_v3.1",
+  "gpn": {
+    "device": "cpu",
+    "model_id": "songlab/gpn-brassicales",
+    "model_revision": "eb9c35d0d18571abe84390d22e74f2b21d319ce3",
+    "score_definition": "alternate-minus-reference log-likelihood ratio averaged over forward and reverse-complement orientations",
+    "window_size": 512
+  },
+  "interpretation_boundary": "Small deterministic integration fixture. It is not a representative population sample and must not be used to infer biological differences among selection classes.",
+  "output": {
+    "filename": "1001g_v3.1_gpn_scores.tsv",
+    "n_variants": 20,
+    "sha256": "82fa78543015f64be6e3de29fbbedc9717f6485d028147cc2beddc1c908d9aed"
+  },
+  "reference": {
+    "assembly": "TAIR10.1",
+    "chromosome_mapping": {
+      "1": "NC_003070.9",
+      "2": "NC_003071.7",
+      "3": "NC_003074.8",
+      "4": "NC_003075.7",
+      "5": "NC_003076.8"
+    },
+    "filename": "GCF_000001735.4_TAIR10.1_genomic.fna",
+    "ncbi_assembly": "GCF_000001735.4",
+    "ref_matches_fixture": "20/20",
+    "sha256": "de99316d1d5597e9a5d40d943ff919c17d59b77116354a5d388b183b6f21075f"
+  },
+  "reproducibility": {
+    "canonical_revision_rerun_bit_identical": true,
+    "canonical_revision_rerun_max_abs_difference": 0.0,
+    "comparison_revision": "45ebf9ecb60743de20c27442877f9a6d665b4dc2",
+    "comparison_revision_bit_identical": true,
+    "comparison_revision_max_abs_difference": 0.0
+  },
+  "software": {
+    "gpn": "0.9.0",
+    "pandas": "3.0.5",
+    "platform": "Linux-6.11.9-100.fc39.x86_64-x86_64-with-glibc2.38",
+    "pyarrow": "25.0.1",
+    "python": "3.13.15",
+    "torch": "2.14.0+cu130",
+    "transformers": "5.15.0"
+  },
+  "species": "Arabidopsis thaliana"
+}

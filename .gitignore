@@ -36,3 +36,6 @@ data/processed/
 .DS_Store
 ._*
 *~
+
+# Local GPN inference intermediates
+data/gpn/
