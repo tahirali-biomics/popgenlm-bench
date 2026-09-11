@@ -54,18 +54,14 @@ def test_population_gpn_fixture_orientation_and_edge_padding():
             assert row.minor_allele == row.alt
             assert row.major_allele == row.ref
             assert bool(row.flipped) is False
-            assert row.gpn_score_minor_major == pytest.approx(
-                row.gpn_score_ref_alt
-            )
+            assert row.gpn_score_minor_major == pytest.approx(row.gpn_score_ref_alt)
 
         elif row.af_alt > 0.5:
             assert row.orientation == "ref_minor"
             assert row.minor_allele == row.ref
             assert row.major_allele == row.alt
             assert bool(row.flipped) is True
-            assert row.gpn_score_minor_major == pytest.approx(
-                -row.gpn_score_ref_alt
-            )
+            assert row.gpn_score_minor_major == pytest.approx(-row.gpn_score_ref_alt)
 
         else:
             pytest.fail("Fixture unexpectedly contains AF_ALT == 0.5")
@@ -106,9 +102,7 @@ def test_joined_fixture_uses_canonical_gpn_scores():
     assert len(check) == 20
 
     for row in check.itertuples():
-        assert row.gpn_score_ref_alt_joined == pytest.approx(
-            row.gpn_score_ref_alt_source
-        )
+        assert row.gpn_score_ref_alt_joined == pytest.approx(row.gpn_score_ref_alt_source)
 
 
 def test_gpn_score_fixture_provenance():
@@ -128,18 +122,12 @@ def test_gpn_score_fixture_provenance():
     )
 
     assert metadata["gpn"]["model_id"] == "songlab/gpn-brassicales"
-    assert metadata["gpn"]["model_revision"] == (
-        "eb9c35d0d18571abe84390d22e74f2b21d319ce3"
-    )
+    assert metadata["gpn"]["model_revision"] == ("eb9c35d0d18571abe84390d22e74f2b21d319ce3")
     assert metadata["gpn"]["window_size"] == 512
 
-    assert metadata["reproducibility"][
-        "canonical_revision_rerun_bit_identical"
-    ] is True
+    assert metadata["reproducibility"]["canonical_revision_rerun_bit_identical"] is True
 
-    assert metadata["reproducibility"][
-        "canonical_revision_rerun_max_abs_difference"
-    ] == 0.0
+    assert metadata["reproducibility"]["canonical_revision_rerun_max_abs_difference"] == 0.0
 
     assert metadata["output"]["n_variants"] == 20
     assert metadata["output"]["sha256"] == sha256(GPN_PATH)

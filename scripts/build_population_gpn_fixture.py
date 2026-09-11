@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from popgenlm.orientation import orient_gpn_score
+from popgenlm.integration import integrate_population_gpn_scores
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -14,6 +14,14 @@ GPN_PATH = ROOT / "data/fixtures/1001g_v3.1_gpn_scores.tsv"
 OUTPUT_PATH = ROOT / "data/fixtures/1001g_v3.1_population_gpn_fixture.tsv"
 
 WINDOW_SIZE = 512
+
+FASTA_TO_VCF = {
+    "NC_003070.9": "1",
+    "NC_003071.7": "2",
+    "NC_003074.8": "3",
+    "NC_003075.7": "4",
+    "NC_003076.8": "5",
+}
 
 
 def main() -> None:
@@ -29,69 +37,12 @@ def main() -> None:
         dtype={"chrom": str},
     )
 
-    # GPN uses FASTA record IDs, whereas the population fixture uses VCF labels.
-    fasta_to_vcf = {
-        "NC_003070.9": "1",
-        "NC_003071.7": "2",
-        "NC_003074.8": "3",
-        "NC_003075.7": "4",
-        "NC_003076.8": "5",
-    }
-
-    gpn["vcf_chrom"] = gpn["chrom"].map(fasta_to_vcf)
-
-    if gpn["vcf_chrom"].isna().any():
-        raise ValueError("Unrecognized GPN FASTA chromosome ID")
-
-    merged = population.merge(
-        gpn[
-            [
-                "vcf_chrom",
-                "pos",
-                "ref",
-                "alt",
-                "chrom",
-                "gpn_score_ref_alt",
-            ]
-        ],
-        left_on=["chrom", "pos", "ref", "alt"],
-        right_on=["vcf_chrom", "pos", "ref", "alt"],
-        how="left",
-        validate="one_to_one",
-        suffixes=("", "_gpn"),
+    merged = integrate_population_gpn_scores(
+        population,
+        gpn,
+        FASTA_TO_VCF,
+        window_size=WINDOW_SIZE,
     )
-
-    if merged["gpn_score_ref_alt"].isna().any():
-        raise ValueError("One or more population variants lack a GPN score")
-
-    orientation_rows = [
-        orient_gpn_score(
-            row.ref,
-            row.alt,
-            row.af_alt,
-            row.gpn_score_ref_alt,
-        )
-        for row in merged.itertuples()
-    ]
-
-    orientation = pd.DataFrame(orientation_rows)
-
-    for column in [
-        "minor_allele",
-        "major_allele",
-        "orientation",
-        "flipped",
-        "gpn_score_paper_oriented",
-        "gpn_score_minor_major",
-    ]:
-        merged[column] = orientation[column].to_numpy()
-
-    # For a centered 512-bp window, variants with POS <= 256 require
-    # left-edge N padding. This flag prevents those sites from being silently
-    # treated as ordinary interior sequence contexts.
-    merged["edge_padded"] = merged["pos"] <= WINDOW_SIZE // 2
-
-    merged = merged.rename(columns={"chrom_gpn": "fasta_chrom"})
 
     output_columns = [
         "selection_class",
