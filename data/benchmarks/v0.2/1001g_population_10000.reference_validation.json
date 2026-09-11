@@ -1,0 +1,54 @@
+{
+  "benchmark": {
+    "expected_rows": 10000,
+    "filename": "1001g_population_10000.tsv",
+    "observed_rows": 10000,
+    "sha256": "cbf535008593ed45fc7ee8619ed7a87c4c3bb2e741e721a4cb97832f3ba5b374"
+  },
+  "chromosome_lengths": {
+    "1": {
+      "expected_length": 30427671,
+      "fasta_chrom": "NC_003070.9",
+      "matches": true,
+      "observed_length": 30427671
+    },
+    "2": {
+      "expected_length": 19698289,
+      "fasta_chrom": "NC_003071.7",
+      "matches": true,
+      "observed_length": 19698289
+    },
+    "3": {
+      "expected_length": 23459830,
+      "fasta_chrom": "NC_003074.8",
+      "matches": true,
+      "observed_length": 23459830
+    },
+    "4": {
+      "expected_length": 18585056,
+      "fasta_chrom": "NC_003075.7",
+      "matches": true,
+      "observed_length": 18585056
+    },
+    "5": {
+      "expected_length": 26975502,
+      "fasta_chrom": "NC_003076.8",
+      "matches": true,
+      "observed_length": 26975502
+    }
+  },
+  "mismatch_examples": [],
+  "reference": {
+    "expected_sha256": "de99316d1d5597e9a5d40d943ff919c17d59b77116354a5d388b183b6f21075f",
+    "filename": "GCF_000001735.4_TAIR10.1_genomic.fna",
+    "observed_sha256": "de99316d1d5597e9a5d40d943ff919c17d59b77116354a5d388b183b6f21075f",
+    "sha256_matches": true
+  },
+  "status": "PASS",
+  "validation": {
+    "mapping_mismatches": 0,
+    "out_of_bounds": 0,
+    "reference_matches": 10000,
+    "reference_mismatches": 0
+  }
+}
