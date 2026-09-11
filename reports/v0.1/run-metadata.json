@@ -1,0 +1,74 @@
+{
+  "status": "completed",
+  "model_id": "songlab/gpn-brassicales",
+  "model_revision": "eb9c35d0d18571abe84390d22e74f2b21d319ce3",
+  "gpn_code_revision": "59bbb86de5520d2c347521c2539a476a502ba661",
+  "window_size": 512,
+  "batch_size": 4,
+  "elapsed_seconds": 80.65301421799995,
+  "device": "cpu",
+  "python": "3.13.14",
+  "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+  "packages": {
+    "gpn": "0.9.0",
+    "torch": "2.13.0+cpu",
+    "transformers": "5.15.0",
+    "pandas": "2.3.3",
+    "pyarrow": "24.0.0"
+  },
+  "command": [
+    ".venv/bin/gpn",
+    "ss",
+    "vep",
+    "--input-path",
+    "data/demo/variants_100.parquet",
+    "--genome-path",
+    "data/demo/reference_chr5_region.fa",
+    "--window-size",
+    "512",
+    "--model-path",
+    "songlab/gpn-brassicales",
+    "--model-revision",
+    "eb9c35d0d18571abe84390d22e74f2b21d319ce3",
+    "--output-path",
+    "results/demo_100/gpn_scores_raw.parquet",
+    "--per-device-eval-batch-size",
+    "4",
+    "--output-dir",
+    "results/demo_100/trainer",
+    "--disable-tqdm"
+  ],
+  "inputs": {
+    "reference": {
+      "path": "data/demo/reference_chr5_region.fa",
+      "sha256": "624dad7224e04390d4a58672e21b87945df34aec457a19d719a403bf0e1f2df5"
+    },
+    "variants": {
+      "path": "data/demo/variants_100.parquet",
+      "sha256": "ce266e1c49c38c80b9338fcdb1691ea9fa2cd66e51655d084e9913531893b062"
+    }
+  },
+  "outputs": {
+    "raw_scores_sha256": "698f44c5257e74de407bcc521512ca7060cab7038c0a0ddd11aa7fb31ace62b4",
+    "merged_scores_sha256": "3b0ca806678482df4c5cee487eb6afb3ea0d33bdd4dce57d063142395e3772bb"
+  },
+  "summary": {
+    "n_variants": 100,
+    "score_definition": "alternate-minus-reference log-likelihood ratio averaged over forward and reverse-complement orientations",
+    "minimum": -7.072365760803223,
+    "q1": -1.8439339697360992,
+    "median": -1.0308830738067627,
+    "mean": -1.2467765772342683,
+    "q3": -0.06406739354133606,
+    "maximum": 2.107316493988037,
+    "standard_deviation": 1.791630647691718,
+    "proportion_negative": 0.77,
+    "median_bootstrap_95pct_ci": [
+      -1.4434458017349243,
+      -0.7225558616220975
+    ],
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 42,
+    "interpretation_boundary": "Deterministic engineering fixture; not a population sample and not evidence for selection or constraint."
+  }
+}

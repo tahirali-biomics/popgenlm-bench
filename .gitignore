@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Notebook state
+.ipynb_checkpoints/
+
+# Large genomics files
+*.vcf
+*.vcf.gz
+*.bcf
+*.bcf.gz
+*.tbi
+*.csi
+*.bam
+*.bai
+*.cram
+*.fa
+*.fasta
+*.fa.gz
+*.fasta.gz
+*.h5
+*.hdf5
+
+# Local working data
+data/raw/
+data/interim/
+data/processed/
+
+# Editor / OS
+.vscode/
+.DS_Store
+._*
+*~

@@ -1,0 +1,19 @@
+{
+  "n_variants": 100,
+  "score_definition": "alternate-minus-reference log-likelihood ratio averaged over forward and reverse-complement orientations",
+  "minimum": -7.0723658,
+  "q1": -1.8439339750000001,
+  "median": -1.03088305,
+  "mean": -1.2467765798540003,
+  "q3": -0.0640673925,
+  "maximum": 2.1073165,
+  "standard_deviation": 1.7916306502325607,
+  "proportion_negative": 0.77,
+  "median_bootstrap_95pct_ci": [
+    -1.4434458,
+    -0.7225558628750025
+  ],
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 42,
+  "interpretation_boundary": "Deterministic engineering fixture; not a population sample and not evidence for selection or constraint."
+}
