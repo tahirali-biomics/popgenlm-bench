@@ -203,6 +203,7 @@ def main() -> None:
             handle,
             fieldnames=fieldnames,
             delimiter="\t",
+            lineterminator="\n",
         )
         writer.writeheader()
         writer.writerows(selected)
