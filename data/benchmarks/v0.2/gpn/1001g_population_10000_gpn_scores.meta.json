@@ -1,0 +1,71 @@
+{
+  "benchmark_id": "popgenlm_v0.2_1001g_population_10000",
+  "gpn": {
+    "device": "cpu",
+    "model_id": "songlab/gpn-brassicales",
+    "model_revision": "eb9c35d0d18571abe84390d22e74f2b21d319ce3",
+    "per_device_eval_batch_size": 8,
+    "score_definition": "alternate-minus-reference log-likelihood ratio averaged over forward and reverse-complement orientations",
+    "window_size": 512
+  },
+  "inputs": {
+    "benchmark_sha256": "cbf535008593ed45fc7ee8619ed7a87c4c3bb2e741e721a4cb97832f3ba5b374",
+    "gpn_input_sha256": "2b3d52d59bcf5ad080ff63eddb77fe7936777b0dd0e4922142f95a480c24da69"
+  },
+  "keyed_output": {
+    "filename": "1001g_population_10000_gpn_scores.tsv",
+    "n_rows": 10000,
+    "sha256": "735155832ff51bcb8c5259fdd678e5fb88bf6e3097368dfcc00c948f899afbc3"
+  },
+  "raw_output": {
+    "n_rows": 10000,
+    "sha256": "cba7d08dfe55c76bc2ed6e1d8aafe1ba9ff907d78e78be5c004595f67321383b"
+  },
+  "reference": {
+    "assembly": "TAIR10.1",
+    "ref_matches": "10000/10000",
+    "sha256": "de99316d1d5597e9a5d40d943ff919c17d59b77116354a5d388b183b6f21075f"
+  },
+  "row_binding": {
+    "gpn_v0.9.0_dataloader_in_order": true,
+    "input_rows": 10000,
+    "method": "positional",
+    "output_rows": 10000,
+    "raw_output_columns": [
+      "score"
+    ],
+    "validation": "Fixed input checksum, equal input/output row counts, finite-score validation, and in-order GPN inference."
+  },
+  "runtime": {
+    "wall_seconds": 1445.575
+  },
+  "software": {
+    "gpn": "0.9.0",
+    "gpn_release_provenance": {
+      "installed_direct_url": null,
+      "installed_version": "0.9.0",
+      "note": "The installed distribution does not contain direct_url.json. The commit and tree recorded here are the official upstream GPN v0.9.0 release provenance, not a locally recovered VCS origin.",
+      "official_release_commit": "007768a31618fa76c2c3db953e69cc2013f5a79c",
+      "official_release_tree": "8595b87d599c3e7fcbfc599352b5c6ab9e2f8350"
+    },
+    "pandas": "3.0.5",
+    "platform": "Linux-6.11.9-100.fc39.x86_64-x86_64-with-glibc2.38",
+    "pyarrow": "25.0.1",
+    "python": "3.13.15",
+    "torch": "2.14.0",
+    "transformers": "5.15.0"
+  },
+  "species": "Arabidopsis thaliana",
+  "summary": {
+    "maximum": 7.0971784591674805,
+    "mean": -0.5321096777915955,
+    "median": -0.30260537564754486,
+    "minimum": -9.26050090789795,
+    "negative": 6205,
+    "positive": 3795,
+    "q1": -1.1320762634277344,
+    "q3": 0.36453673243522644,
+    "standard_deviation": 1.4944653511047363,
+    "zero": 0
+  }
+}
