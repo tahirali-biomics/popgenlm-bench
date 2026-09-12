@@ -1,0 +1,72 @@
+{
+  "analysis_id": "popgenlm_v0.2_population_gpn_analysis",
+  "continuous_association": {
+    "chromosome_stratified_permutation_p": 9.999000099990002e-05,
+    "permutation_extreme_count": 0,
+    "spearman_maf_minor_vs_major": 0.0611223588104764,
+    "spearman_maf_raw_ref_alt": 0.06571470379193785
+  },
+  "frequency_class_summary": {
+    "common": {
+      "maximum": 7.0971785,
+      "mean": -0.23822295880685362,
+      "median": -0.15618226000000002,
+      "minimum": -8.03036,
+      "n": 1230,
+      "q25": -0.8702091750000001,
+      "q75": 0.609401195,
+      "sd": 1.381591016592553
+    },
+    "low_frequency": {
+      "maximum": 4.659952,
+      "mean": -0.48810787411165923,
+      "median": -0.27562457,
+      "minimum": -7.7803383,
+      "n": 1561,
+      "q25": -1.062835,
+      "q75": 0.35092264,
+      "sd": 1.4452253385537537
+    },
+    "rare": {
+      "maximum": 6.2630625,
+      "mean": -0.6026914037779221,
+      "median": -0.34853882,
+      "minimum": -9.260501,
+      "n": 7209,
+      "q25": -1.1922243,
+      "q75": 0.32198122,
+      "sd": 1.512934941668167
+    }
+  },
+  "input": {
+    "filename": "1001g_population_10000_gpn.tsv",
+    "n_variants": 10000,
+    "sha256": "ef188e83d0e598d016c158b4daeec08be63e19723840fc42b494c76443fca469"
+  },
+  "interpretation_boundary": "These analyses quantify concordance between population frequency and GPN scores. They are not tests of natural selection. Demography, population structure, linkage, ascertainment, and allele age may contribute. The chromosome-stratified permutation preserves chromosome membership but does not explicitly model local LD.",
+  "outputs": {
+    "chromosome_robustness": "chromosome_robustness.tsv",
+    "frequency_class_pairwise": "frequency_class_pairwise.tsv",
+    "frequency_class_summary": "frequency_class_summary.tsv",
+    "sensitivity_summary": "sensitivity_summary.tsv"
+  },
+  "pairwise_effect_size_definition": "Tie-aware rank-biserial correlation, equivalent to Cliff's delta. Positive values mean group A tends to have larger GPN scores than group B.",
+  "score": {
+    "primary": "gpn_score_minor_vs_major",
+    "semantics": "log P(minor) - log P(major)"
+  },
+  "settings": {
+    "bootstrap_replicates": 5000,
+    "frequency_classes": {
+      "common": "MAF >= 0.05",
+      "low_frequency": "0.01 <= MAF < 0.05",
+      "rare": "MAF < 0.01"
+    },
+    "permutations": 10000,
+    "random_seed": 20260912,
+    "sensitivity_filters": {
+      "call_rate": "allele_call_rate >= 0.95",
+      "minor_allele_count": "MAC >= 5"
+    }
+  }
+}
