@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Build the deterministic PopGenLM Bench v0.2 population benchmark."""
 
 from __future__ import annotations

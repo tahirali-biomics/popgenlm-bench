@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Build the canonical PopGenLM Bench v0.2 population + GPN dataset."""
 
 from __future__ import annotations

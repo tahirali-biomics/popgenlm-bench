@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Analyze population frequency versus GPN scores for PopGenLM Bench v0.2."""
 
 from __future__ import annotations

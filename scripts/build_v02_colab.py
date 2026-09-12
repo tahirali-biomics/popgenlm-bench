@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Build the PopGenLM Bench v0.2 Colab notebook deterministically."""
 
 from __future__ import annotations

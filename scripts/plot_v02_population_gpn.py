@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Generate PopGenLM Bench v0.2 population-GPN figures."""
 
 from __future__ import annotations

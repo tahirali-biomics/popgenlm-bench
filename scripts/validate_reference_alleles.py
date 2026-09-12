@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Validate benchmark REF alleles against an exact reference FASTA."""
 
 from __future__ import annotations
