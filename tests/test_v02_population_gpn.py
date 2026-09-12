@@ -9,7 +9,6 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-
 ROOT = Path(__file__).resolve().parents[1]
 
 TABLE = ROOT / "data" / "benchmarks" / "v0.2" / "1001g_population_10000_gpn.tsv"
