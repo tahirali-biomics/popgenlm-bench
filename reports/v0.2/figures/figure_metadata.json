@@ -1,0 +1,32 @@
+{
+  "environment": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "python": "3.12.7"
+  },
+  "figure_set": "popgenlm_v0.2_population_gpn",
+  "input_hashes": {
+    "analysis": "c41e2a4e59c5a9fc25f12803ae30149c502096167328874b0890e1bf4b5f11e9",
+    "chromosome": "5f0791cf974a35524393d99cdc248dede8fac0bc25978aca7dbefe1dd2e74dc3",
+    "class_summary": "a7dfd82ee5f0850a68dbfcdfc21b47a0df0a694d22e4ecfc462d75afc3785c3e",
+    "joined_data": "ef188e83d0e598d016c158b4daeec08be63e19723840fc42b494c76443fca469",
+    "pairwise": "3779fe5578ca4b33b5d66c4a34d4eefe61d85417982a4e5f45e31b3571f80739",
+    "sensitivity": "d00b1a016f87102d45cbf276b08b0fa0fea3379ab08194c14a3f4e8091e2a3fa"
+  },
+  "interpretation": "Figures show weak but reproducible concordance between population frequency and GPN scores. They are not evidence by themselves of natural selection.",
+  "outputs": {
+    "maf-spectrum.png": "9f4a0c1648a2ff167e4590bbdc1344f23dac39962ceb84ec52443c843e248748",
+    "orientation-check.png": "3694b1334857e763a3e3d88d3d930b748a7777365ce1544117f7130a84479270",
+    "score-by-frequency-class.png": "e05517898e5e52423fb7c8e709f903d50d5c38e5af8728ab0bbca7d755470336",
+    "score-vs-maf.png": "a2e3a441b3cd4fa4c6fda3c46e995577c412073bcd7bc739f46811c7478c3fcc",
+    "v02_population_gpn_overview.pdf": "1953adc7e335f4c5704b0baf4ecd3fd9e1a161ae194b018a7320aff1d45e7185",
+    "v02_population_gpn_overview.png": "d33e1695d26a7809c1f039150324099225bff07c65db08a4d0e41181ba040237"
+  },
+  "panels": {
+    "A": "MAF spectrum with predefined 0.01 and 0.05 frequency thresholds",
+    "B": "MAF versus GPN minor-vs-major score; hexbin density with frozen Spearman and permutation statistics",
+    "C": "GPN score distributions across rare, low-frequency, and common variants; rare-vs-common frozen effect size",
+    "D": "Raw REF-to-ALT versus population-oriented score showing ALT-major sign flips"
+  }
+}
