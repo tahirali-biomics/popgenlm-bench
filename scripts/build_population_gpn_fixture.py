@@ -67,7 +67,7 @@ def main() -> None:
         "orientation",
         "flipped",
         "gpn_score_paper_oriented",
-        "gpn_score_minor_major",
+        "gpn_score_minor_vs_major",
         "edge_padded",
     ]
 

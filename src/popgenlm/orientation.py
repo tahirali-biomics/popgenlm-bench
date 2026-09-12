@@ -14,8 +14,10 @@ def orient_gpn_score(
     The paper-oriented score follows the published GPN Arabidopsis benchmark:
     flip the sign when ALT frequency is greater than 0.5.
 
-    A true minor→major interpretation is undefined when AF_ALT == 0.5, so
-    minor/major alleles and the minor-major score are returned as None there.
+    The frequency-oriented score is log P(minor) - log P(major).
+
+    A unique minor-vs-major orientation is undefined when AF_ALT == 0.5, so
+    minor/major alleles and the minor-vs-major score are returned as None there.
     """
 
     ref = str(ref)

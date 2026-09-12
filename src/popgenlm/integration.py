@@ -42,7 +42,8 @@ def integrate_population_gpn_scores(
 
     GPN scores are oriented using ALT allele frequency. When ALT is the major
     allele (AF_ALT > 0.5), the raw REF→ALT score is sign-flipped so that the
-    resulting minor→major score follows the published Arabidopsis convention.
+    resulting minor-vs-major score is log P(minor) - log P(major),
+    following the published Arabidopsis frequency-orientation convention.
 
     ``edge_padded`` identifies variants whose centered sequence window extends
     beyond the left chromosome boundary. Detecting right-edge padding requires
