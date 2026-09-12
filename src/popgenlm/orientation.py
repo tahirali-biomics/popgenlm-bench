@@ -49,7 +49,7 @@ def orient_gpn_score(
             "orientation": "alt_minor",
             "flipped": False,
             "gpn_score_paper_oriented": score_ref_alt,
-            "gpn_score_minor_major": score_ref_alt,
+            "gpn_score_minor_vs_major": score_ref_alt,
         }
 
     if af_alt > 0.5:
@@ -60,7 +60,7 @@ def orient_gpn_score(
             "orientation": "ref_minor",
             "flipped": True,
             "gpn_score_paper_oriented": -score_ref_alt,
-            "gpn_score_minor_major": -score_ref_alt,
+            "gpn_score_minor_vs_major": -score_ref_alt,
         }
 
     return {
@@ -70,5 +70,5 @@ def orient_gpn_score(
         "orientation": "frequency_tie",
         "flipped": False,
         "gpn_score_paper_oriented": score_ref_alt,
-        "gpn_score_minor_major": None,
+        "gpn_score_minor_vs_major": None,
     }

@@ -160,7 +160,7 @@ def integrate_population_gpn_scores(
         "orientation",
         "flipped",
         "gpn_score_paper_oriented",
-        "gpn_score_minor_major",
+        "gpn_score_minor_vs_major",
     ]:
         merged[column] = orientation[column].to_numpy()
 

@@ -1,4 +1,4 @@
-selection_class	chrom	fasta_chrom	pos	ref	alt	n_genotypes	n_missing	n_heterozygous	ac_ref	ac_alt	an	af_alt	mac	maf	allele_call_rate	gpn_score_ref_alt	minor_allele	major_allele	orientation	flipped	gpn_score_paper_oriented	gpn_score_minor_major	edge_padded
+selection_class	chrom	fasta_chrom	pos	ref	alt	n_genotypes	n_missing	n_heterozygous	ac_ref	ac_alt	an	af_alt	mac	maf	allele_call_rate	gpn_score_ref_alt	minor_allele	major_allele	orientation	flipped	gpn_score_paper_oriented	gpn_score_minor_vs_major	edge_padded
 missing	1	NC_003070.9	55	C	T	1135	679	0	910	2	912	0.0021929824561403	2	0.0021929824561403	0.4017621145374449	-1.1988115	T	C	alt_minor	False	-1.1988115	-1.1988115	True
 missing	1	NC_003070.9	56	T	A	1135	677	0	914	2	916	0.0021834061135371	2	0.0021834061135371	0.4035242290748899	-1.4174784	A	T	alt_minor	False	-1.4174784	-1.4174784	True
 missing	1	NC_003070.9	63	T	C	1135	717	0	832	4	836	0.0047846889952153	4	0.0047846889952153	0.3682819383259912	2.4662642	C	T	alt_minor	False	2.4662642	2.4662642	True

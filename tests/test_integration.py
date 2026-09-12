@@ -48,13 +48,13 @@ def test_integrates_and_orients_scores():
     assert first["fasta_chrom"] == "NC_1"
     assert first["orientation"] == "alt_minor"
     assert bool(first["flipped"]) is False
-    assert first["gpn_score_minor_major"] == pytest.approx(-2.0)
+    assert first["gpn_score_minor_vs_major"] == pytest.approx(-2.0)
     assert bool(first["edge_padded"]) is True
 
     second = result.iloc[1]
     assert second["orientation"] == "ref_minor"
     assert bool(second["flipped"]) is True
-    assert second["gpn_score_minor_major"] == pytest.approx(-3.0)
+    assert second["gpn_score_minor_vs_major"] == pytest.approx(-3.0)
     assert bool(second["edge_padded"]) is False
 
 

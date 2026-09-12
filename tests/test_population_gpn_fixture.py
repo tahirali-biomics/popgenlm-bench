@@ -41,7 +41,7 @@ def test_population_gpn_fixture_orientation_and_edge_padding():
     }
 
     assert df["gpn_score_ref_alt"].notna().all()
-    assert df["gpn_score_minor_major"].notna().all()
+    assert df["gpn_score_minor_vs_major"].notna().all()
 
     assert int(df["flipped"].sum()) == 5
     assert int(df["edge_padded"].sum()) == 5
@@ -54,14 +54,14 @@ def test_population_gpn_fixture_orientation_and_edge_padding():
             assert row.minor_allele == row.alt
             assert row.major_allele == row.ref
             assert bool(row.flipped) is False
-            assert row.gpn_score_minor_major == pytest.approx(row.gpn_score_ref_alt)
+            assert row.gpn_score_minor_vs_major == pytest.approx(row.gpn_score_ref_alt)
 
         elif row.af_alt > 0.5:
             assert row.orientation == "ref_minor"
             assert row.minor_allele == row.ref
             assert row.major_allele == row.alt
             assert bool(row.flipped) is True
-            assert row.gpn_score_minor_major == pytest.approx(-row.gpn_score_ref_alt)
+            assert row.gpn_score_minor_vs_major == pytest.approx(-row.gpn_score_ref_alt)
 
         else:
             pytest.fail("Fixture unexpectedly contains AF_ALT == 0.5")

@@ -12,7 +12,7 @@ def test_alt_minor_keeps_score():
     assert result["flipped"] is False
     assert result["maf"] == pytest.approx(0.10)
     assert result["gpn_score_paper_oriented"] == pytest.approx(-2.0)
-    assert result["gpn_score_minor_major"] == pytest.approx(-2.0)
+    assert result["gpn_score_minor_vs_major"] == pytest.approx(-2.0)
 
 
 def test_alt_major_flips_score():
@@ -24,7 +24,7 @@ def test_alt_major_flips_score():
     assert result["flipped"] is True
     assert result["maf"] == pytest.approx(0.10)
     assert result["gpn_score_paper_oriented"] == pytest.approx(2.0)
-    assert result["gpn_score_minor_major"] == pytest.approx(2.0)
+    assert result["gpn_score_minor_vs_major"] == pytest.approx(2.0)
 
 
 def test_frequency_tie_has_no_unique_minor_allele():
@@ -40,7 +40,7 @@ def test_frequency_tie_has_no_unique_minor_allele():
     assert result["gpn_score_paper_oriented"] == pytest.approx(-1.5)
 
     # But do not falsely label either allele as minor at exactly 50:50.
-    assert result["gpn_score_minor_major"] is None
+    assert result["gpn_score_minor_vs_major"] is None
 
 
 def test_invalid_frequency_fails():
