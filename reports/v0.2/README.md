@@ -157,5 +157,5 @@ Run validation:
     pytest -q
     git diff --check
 
-At this v0.2 development milestone, the full test suite contains 52 passing
+The v0.2.0 release is validated by a full test suite containing 58 passing
 tests.
