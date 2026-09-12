@@ -98,22 +98,23 @@ def integrate_population_gpn_scores(
 
     gpn_scores["gpn_score_ref_alt"] = numeric_scores
 
+    gpn_join = gpn_scores[
+        [
+            "vcf_chrom",
+            "pos",
+            "ref",
+            "alt",
+            "chrom",
+            "gpn_score_ref_alt",
+        ]
+    ].rename(columns={"chrom": "gpn_fasta_chrom"})
+
     merged = population.merge(
-        gpn_scores[
-            [
-                "vcf_chrom",
-                "pos",
-                "ref",
-                "alt",
-                "chrom",
-                "gpn_score_ref_alt",
-            ]
-        ],
+        gpn_join,
         left_on=POPULATION_KEY,
         right_on=GPN_MAPPED_KEY,
         how="left",
         validate="one_to_one",
-        suffixes=("", "_gpn"),
         indicator=True,
     )
 
@@ -121,6 +122,15 @@ def integrate_population_gpn_scores(
 
     if unmatched.any():
         raise ValueError(f"{int(unmatched.sum())} population variant(s) lack a matching GPN score")
+
+    if "fasta_chrom" in merged.columns:
+        population_fasta = merged["fasta_chrom"].astype(str)
+        gpn_fasta = merged["gpn_fasta_chrom"].astype(str)
+
+        if not population_fasta.eq(gpn_fasta).all():
+            raise ValueError("Population FASTA chromosome mapping is inconsistent with GPN scores")
+    else:
+        merged["fasta_chrom"] = merged["gpn_fasta_chrom"]
 
     orientation_rows = [
         orient_gpn_score(
@@ -170,6 +180,10 @@ def integrate_population_gpn_scores(
     # 1–256 therefore require left-edge padding.
     merged["edge_padded"] = pd.to_numeric(merged["pos"]).to_numpy() <= window_size // 2
 
-    merged = merged.rename(columns={"chrom_gpn": "fasta_chrom"})
-
-    return merged.drop(columns=["vcf_chrom", "_merge"])
+    return merged.drop(
+        columns=[
+            "vcf_chrom",
+            "gpn_fasta_chrom",
+            "_merge",
+        ]
+    )

@@ -178,3 +178,34 @@ def test_nonpositive_window_size_fails():
             FASTA_TO_VCF,
             window_size=0,
         )
+
+
+def test_existing_population_fasta_chrom_is_preserved_and_validated():
+    population = population_table()
+    population["fasta_chrom"] = ["NC_1", "NC_1"]
+
+    result = integrate_population_gpn_scores(
+        population,
+        gpn_table(),
+        FASTA_TO_VCF,
+        window_size=512,
+    )
+
+    assert list(result.columns).count("fasta_chrom") == 1
+    assert result["fasta_chrom"].tolist() == ["NC_1", "NC_1"]
+
+
+def test_inconsistent_population_fasta_chrom_fails():
+    population = population_table()
+    population["fasta_chrom"] = ["WRONG", "NC_1"]
+
+    with pytest.raises(
+        ValueError,
+        match="FASTA chromosome mapping is inconsistent",
+    ):
+        integrate_population_gpn_scores(
+            population,
+            gpn_table(),
+            FASTA_TO_VCF,
+            window_size=512,
+        )
