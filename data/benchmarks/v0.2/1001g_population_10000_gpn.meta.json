@@ -1,0 +1,65 @@
+{
+  "benchmark_id": "popgenlm_v0.2_1001g_population_10000_gpn",
+  "counts": {
+    "alt_major": 246,
+    "edge_padded": 0,
+    "flipped": 246,
+    "frequency_classes": {
+      "common": 1230,
+      "low_frequency": 1561,
+      "rare": 7209
+    },
+    "frequency_ties": 0,
+    "variants": 10000
+  },
+  "dataset_id": "1001g_1135_v3.1",
+  "inputs": {
+    "gpn_metadata": {
+      "filename": "1001g_population_10000_gpn_scores.meta.json",
+      "sha256": "cbafbd25837c27b23fd42f7f794968513f3a1dbad11faa76938ceb686f9169b3"
+    },
+    "gpn_scores": {
+      "filename": "1001g_population_10000_gpn_scores.tsv",
+      "sha256": "735155832ff51bcb8c5259fdd678e5fb88bf6e3097368dfcc00c948f899afbc3"
+    },
+    "population": {
+      "filename": "1001g_population_10000.tsv",
+      "sha256": "cbf535008593ed45fc7ee8619ed7a87c4c3bb2e741e721a4cb97832f3ba5b374"
+    }
+  },
+  "integration": {
+    "fasta_mapping_validated": true,
+    "method": "one-to-one variant-key join through PopGenLM integration API",
+    "population_row_order_preserved": true,
+    "variant_key": "chrom:pos:ref:alt"
+  },
+  "interpretation_boundary": "Population-frequency concordance with a genomic language-model score is not by itself evidence of natural selection. Demography, population structure, linkage, ascertainment, and allele age may contribute.",
+  "output": {
+    "filename": "1001g_population_10000_gpn.tsv",
+    "n_variants": 10000,
+    "sha256": "ef188e83d0e598d016c158b4daeec08be63e19723840fc42b494c76443fca469"
+  },
+  "reference": {
+    "assembly": "TAIR10.1",
+    "chromosome_config_sha256": "950cc935e8d724d6238ea1ade80c8dc5427a8a7a9f26ea72f7cffc89737e80f5",
+    "edge_padding_excluded": true,
+    "ncbi_assembly": "GCF_000001735.4",
+    "window_size": 512
+  },
+  "release_target": "v0.2.0",
+  "score_semantics": {
+    "gpn_score_minor_vs_major": "log P(minor) - log P(major); raw score sign-flipped exactly when AF_ALT > 0.5",
+    "gpn_score_paper_oriented": "published Arabidopsis >0.5 frequency-orientation convention",
+    "gpn_score_ref_alt": "log P(ALT) - log P(REF), strand-averaged GPN score"
+  },
+  "score_summary_minor_vs_major": {
+    "maximum": 7.0971785,
+    "mean": -0.5399752960655769,
+    "median": -0.30410565,
+    "minimum": -9.260501,
+    "q1": -1.1416522,
+    "q3": 0.36049055,
+    "standard_deviation": 1.4916410541153187
+  },
+  "species": "Arabidopsis thaliana"
+}
