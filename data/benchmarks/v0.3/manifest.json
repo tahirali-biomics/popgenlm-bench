@@ -1,0 +1,20 @@
+{
+  "benchmark": "PopGenLM Bench",
+  "release": "v0.3.0",
+  "assets": [
+    {"path":"data/benchmarks/v0.3/embeddings/sample_quality.tsv","sha256":"1cfd16e6adcc3c621d2f4c2115e3b46e451826de6040dd6f6630a241912f1712","bytes":74401,"scientific_role":"Per-sample genotype call-rate and inclusion metadata for the released UMAP analyses.","rows":1135,"columns":9},
+    {"path":"data/benchmarks/v0.3/embeddings/sample_umap_primary.tsv","sha256":"4a0c3a8e20bbf3b869ffd7237dcc89bbf88c40f0a74906ed0a6090147ed2e275","bytes":333420,"scientific_role":"Primary genotype UMAP coordinates, principal components, and sample geography.","rows":1093,"columns":19},
+    {"path":"data/benchmarks/v0.3/embeddings/sample_umap_strict.tsv","sha256":"8c28e46a026cc0086fc9735db74fd154f6d4a78f107a20cca06e92036ce3146a","bytes":303070,"scientific_role":"Strict genotype UMAP coordinates for samples meeting the call-rate threshold.","rows":996,"columns":19},
+    {"path":"data/benchmarks/v0.3/popgenlm_v03_master_10000_annotated.tsv","sha256":"428f6948180f6aa95366d931a49b1a86ccfb7ea98663875271af8bbb2f9e8b47","bytes":3759617,"scientific_role":"Annotated 10,000-variant master table with population counts, model scores, PhyloP, and genomic context.","rows":10000,"columns":39},
+    {"path":"data/benchmarks/v0.3/statistics/figure_statistics.tsv","sha256":"3192385d740d9d88cb2736e31decb543fac49418da10991a33c33e71005b853d","bytes":4209,"scientific_role":"Statistics used by the released model-evidence figure, including descriptive correlations and bootstrap intervals.","rows":38,"columns":14},
+    {"path":"data/benchmarks/v0.3/statistics/ld_thinning_membership.tsv","sha256":"3795a593a633695e1f65dd7bfa90953de37f51dc4266d3b2600cf3aed00d45c3","bytes":5025910,"scientific_role":"Variant membership and removal metadata for all five deterministic LD-thinning profiles.","rows":50000,"columns":16},
+    {"path":"data/benchmarks/v0.3/statistics/overall_ld_sensitivity_correlations.tsv","sha256":"0aa9fe41296f77dbad43f650ea4ee6d4d0d5edea85ab2a6a91d7e93593d84df8","bytes":7401,"scientific_role":"Overall model-concordance and model–PhyloP correlations across LD scopes.","rows":72,"columns":7},
+    {"path":"data/benchmarks/v0.3/statistics/physical_bin_bootstrap_ci.tsv","sha256":"339eb912e2869e70c425bb7a953e63cdb132483414b6471b3bec435dbb1cc76f","bytes":7599,"scientific_role":"Deterministic physical-bin bootstrap intervals for released correlations.","rows":36,"columns":15},
+    {"path":"data/benchmarks/v0.3/statistics/physical_bins.tsv","sha256":"0b7fb319eb90cd8967e07f340e90dc1473eed2be1170c80a1032684bb97f244c","bytes":771730,"scientific_role":"Fixed 50 kb, 100 kb, and 250 kb physical-bin assignments for the master variants.","rows":10000,"columns":11},
+    {"path":"data/benchmarks/v0.3/statistics/stratified_correlations.tsv","sha256":"366b1cf37e39d0859b127a90ad0087a7219c611ac91569e461165c0736097ca3","bytes":17533,"scientific_role":"Descriptive model-concordance and model–PhyloP correlations stratified by genomic context.","rows":156,"columns":8},
+    {"path":"figures/v0.3/genotype_umap_geography.png","sha256":"b7658cde2a3b4786f1a896321d9d2ec3da745f20b96efb032db2bfd862a4f0f5","bytes":505914,"scientific_role":"Released genotype UMAP and geographic sample-quality figure."},
+    {"path":"figures/v0.3/genotype_umap_geography.svg","sha256":"3b0abb5f891f45f4f7ba72e25fb37356c4e5d0cf5938f00ca987c2195ff729a4","bytes":185121,"scientific_role":"Vector version of the released genotype UMAP and geographic sample-quality figure."},
+    {"path":"figures/v0.3/model_evidence.png","sha256":"225215d535e9b90cd03735e9cb155265749f3a8dc0e76ff12d6b2ee355246c51","bytes":552336,"scientific_role":"Released model-concordance, evolutionary-evidence, stratification, and LD-sensitivity figure."},
+    {"path":"figures/v0.3/model_evidence.svg","sha256":"f173e6b3def64a0ccf3ad2748070bbe2e016828f63a96357f8d9fbbf10689dfe","bytes":208316,"scientific_role":"Vector version of the released model-concordance and evolutionary-evidence figure."}
+  ]
+}

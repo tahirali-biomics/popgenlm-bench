@@ -1,0 +1,39 @@
+panel	source	scope	dimension	stratum	bin_width_bp	comparison	method	n	estimate	ci_lower_2.5	ci_upper_97.5	clusters	bootstrap_replicates
+A	overall	unpruned				gpn_vs_plantcad_minor_major	pearson	10000	0.63309916461944105				
+A	overall	unpruned				gpn_vs_plantcad_minor_major	spearman	10000	0.65253644351123719				
+B	bootstrap	unpruned			100000	gpn_vs_plantcad_minor_major	pearson	10000	0.63309916461944105	0.61566917585364811	0.64894120799098032	1146	2000
+B	bootstrap	unpruned			100000	gpn_vs_plantcad_minor_major	spearman	10000	0.65253644351123719	0.63666634638449227	0.66707314077628932	1146	2000
+B	bootstrap	unpruned			100000	gpn_minor_major_vs_phylop	pearson	9453	-0.24223968056571962	-0.26125013390147689	-0.22270224044855222	1141	2000
+B	bootstrap	unpruned			100000	gpn_minor_major_vs_phylop	spearman	9453	-0.18761100361211028	-0.20761833448883515	-0.1693590439560983	1141	2000
+B	bootstrap	unpruned			100000	plantcad_minor_major_vs_phylop	pearson	9453	-0.33336452964815044	-0.35262242074166217	-0.31270236273060592	1141	2000
+B	bootstrap	unpruned			100000	plantcad_minor_major_vs_phylop	spearman	9453	-0.26788979662295742	-0.2865766495896141	-0.24759207246276693	1141	2000
+C	stratified		primary_context	coding_cds		gpn_vs_plantcad_minor_major	spearman	2750	0.51705315029293963				
+C	stratified		primary_context	coding_cds		gpn_minor_major_vs_phylop	spearman	2741	-0.26837553160873223				
+C	stratified		primary_context	coding_cds		plantcad_minor_major_vs_phylop	spearman	2741	-0.42988968651644321				
+C	stratified		primary_context	exonic_non_cds		gpn_vs_plantcad_minor_major	spearman	2132	0.72134269429841102				
+C	stratified		primary_context	exonic_non_cds		gpn_minor_major_vs_phylop	spearman	1855	-0.13472011635403661				
+C	stratified		primary_context	exonic_non_cds		plantcad_minor_major_vs_phylop	spearman	1855	-0.12845298707772163				
+C	stratified		primary_context	intergenic		gpn_vs_plantcad_minor_major	spearman	3266	0.73487694834420914				
+C	stratified		primary_context	intergenic		gpn_minor_major_vs_phylop	spearman	3038	-0.13782579814426191				
+C	stratified		primary_context	intergenic		plantcad_minor_major_vs_phylop	spearman	3038	-0.13612385298878227				
+C	stratified		primary_context	other_genic		gpn_vs_plantcad_minor_major	spearman	1852	0.73949727695672496				
+C	stratified		primary_context	other_genic		gpn_minor_major_vs_phylop	spearman	1819	-0.098546408889992901				
+C	stratified		primary_context	other_genic		plantcad_minor_major_vs_phylop	spearman	1819	-0.093790610865281399				
+D	overall	unpruned				gpn_vs_plantcad_minor_major	spearman	10000	0.65253644351123719				
+D	overall	unpruned				gpn_minor_major_vs_phylop	spearman	9453	-0.18761100361211028				
+D	overall	unpruned				plantcad_minor_major_vs_phylop	spearman	9453	-0.26788979662295742				
+D	overall	w050kb_r2ge0.20				gpn_vs_plantcad_minor_major	spearman	9618	0.65309875556611474				
+D	overall	w050kb_r2ge0.20				gpn_minor_major_vs_phylop	spearman	9091	-0.18943566800724249				
+D	overall	w050kb_r2ge0.20				plantcad_minor_major_vs_phylop	spearman	9091	-0.26838228555858629				
+D	overall	w100kb_r2ge0.20				gpn_vs_plantcad_minor_major	spearman	9435	0.65264290434498451				
+D	overall	w100kb_r2ge0.20				gpn_minor_major_vs_phylop	spearman	8918	-0.18741279111637624				
+D	overall	w100kb_r2ge0.20				plantcad_minor_major_vs_phylop	spearman	8918	-0.26577142840212969				
+D	overall	w250kb_r2ge0.20				gpn_vs_plantcad_minor_major	spearman	9056	0.65323596254761196				
+D	overall	w250kb_r2ge0.20				gpn_minor_major_vs_phylop	spearman	8561	-0.18660880659461376				
+D	overall	w250kb_r2ge0.20				plantcad_minor_major_vs_phylop	spearman	8561	-0.26938934299046791				
+D	overall	w100kb_r2ge0.10				gpn_vs_plantcad_minor_major	spearman	9116	0.65229727016835515				
+D	overall	w100kb_r2ge0.10				gpn_minor_major_vs_phylop	spearman	8611	-0.18658390363345392				
+D	overall	w100kb_r2ge0.10				plantcad_minor_major_vs_phylop	spearman	8611	-0.26625863139568773				
+D	overall	w100kb_r2ge0.50				gpn_vs_plantcad_minor_major	spearman	9745	0.65339642728957015				
+D	overall	w100kb_r2ge0.50				gpn_minor_major_vs_phylop	spearman	9210	-0.18471766747265522				
+D	overall	w100kb_r2ge0.50				plantcad_minor_major_vs_phylop	spearman	9210	-0.26394139720340254				

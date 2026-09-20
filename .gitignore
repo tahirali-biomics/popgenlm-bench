@@ -39,3 +39,7 @@ data/processed/
 
 # Local GPN inference intermediates
 data/gpn/
+
+# Retained originals; canonical accepted comparison artifacts are outside Git.
+/scripts/plantcad_comparison_results.tsv
+/scripts/plantcad_comparison_results.summary.json

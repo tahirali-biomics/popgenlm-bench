@@ -1,0 +1,210 @@
+[
+  {
+    "variant_id": "2:11905659:T:A",
+    "chrom": "2",
+    "pos": "11905659",
+    "ref": "T",
+    "alt": "A",
+    "context": "GTGCCCTTTTGGTGGTGAATTAACTATATTGTATGTTTTGATGATTAAAAATATCAATTCAACTTTTGTTTAATTCATTTGTGTTGKTGAGTTGTTCTCTCCTCTTCTTCTAATAGTCCACGTCTCTAMSACGTTCAAGTTATTKRAGAAGATTATTGGATGACGGAGAACCGGAGRTYAACCAAGATAGATAATCGAAATGACAAACCCAACATTTGATAAAAATATATGATTTTAAAAAACTTTAAAAGATTATCGGATAATTTTAAAAAACTCTAAAAGATGATCCAAACGAGTTATGCCAAGTATGAGAAAGGAGATATGCAACAWWWTYCYACTYMAAAATTGAGTAATTTTTATTTAATGRMYWACGAAAAGTTAAATGTACTTTTAGTGKTWWWAGTYCTCTTWCAAWWGACTACGAAAAAGTTAAATGTGTGTAAGTGRTWWWGGTAATTAATGTAATCAATTTTTAAAAGCTTCTCCTTGTGGACCACAAATTATCAAGAAAT",
+    "context_sha256": "edd3ccb40990e6205742a44379588b4a8da7e4361b435b43d6b7d224c566dba5",
+    "non_acgt": [
+      {
+        "index": 86,
+        "base": "K",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 128,
+        "base": "M",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 129,
+        "base": "S",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 144,
+        "base": "K",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 145,
+        "base": "R",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 176,
+        "base": "R",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 178,
+        "base": "Y",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 329,
+        "base": "W",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 330,
+        "base": "W",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 331,
+        "base": "W",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 333,
+        "base": "Y",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 335,
+        "base": "Y",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 339,
+        "base": "Y",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 340,
+        "base": "M",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 366,
+        "base": "R",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 367,
+        "base": "M",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 368,
+        "base": "Y",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 369,
+        "base": "W",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 396,
+        "base": "K",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 398,
+        "base": "W",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 399,
+        "base": "W",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 400,
+        "base": "W",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 404,
+        "base": "Y",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 410,
+        "base": "W",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 414,
+        "base": "W",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 415,
+        "base": "W",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 446,
+        "base": "R",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 448,
+        "base": "W",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 449,
+        "base": "W",
+        "observed_token": 2,
+        "expected_token": 2
+      },
+      {
+        "index": 450,
+        "base": "W",
+        "observed_token": 2,
+        "expected_token": 2
+      }
+    ]
+  },
+  {
+    "variant_id": "3:3046929:T:C",
+    "chrom": "3",
+    "pos": "3046929",
+    "ref": "T",
+    "alt": "C",
+    "context": "GACTATTTGTTTGCCAATTCTACAGCAAGTTGGAGTTTTGTTATAATCATAGTAATTTGTAGATTCATGATATTAGCTGCAGATTCATAAAGATATTTCCTCTATTTTTAATTTAAATTAACAAACAACTTCCTAGCATTGGAGAAAGACAATTAGTTAGATGATTTGGTAAAAACATTTTCTCAATACACGTAAAGTGGCTAGTGCACAATACACGTGGTTACCACGGACAGATTTTGTTTTCTTGTTTTTTTTTTCTTAAGGATTTGTTATCAGTTTATCACCGTATATTCATGACCAATTTAACATAACATGTTCGAGCTTTTAAATTTTGTTACCCTCATTAAAAAGTCTGGTGTAAAATATAACATATTAATTTCTTAGCTACCATCAGAGAACAAAGTTTCCATATACTWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAGGTTTCCATATACTATTGGGAGGTCTTCTCAAAAGGTGGAAATTTCGTCTCTTGCTAGT",
+    "context_sha256": "be0d5710d159daa13da2c6b2cbc134f31297c517689660cd1254d2a1a5d95001",
+    "non_acgt": [
+      {
+        "index": 415,
+        "base": "W",
+        "observed_token": 2,
+        "expected_token": 2
+      }
+    ]
+  }
+]
