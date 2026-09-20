@@ -1,6 +1,6 @@
 [project]
 name = "popgenlm-bench"
-version = "0.2.0"
+version = "0.3.0"
 description = "Reproducible evaluation of genomic language-model variant scores using population-genetic and evolutionary evidence."
 readme = "README.md"
 requires-python = ">=3.11"

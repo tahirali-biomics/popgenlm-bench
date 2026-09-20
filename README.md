@@ -9,6 +9,23 @@ The project asks a simple but important question:
 > When a genomic language model assigns a score to a variant, what biological
 > evidence supports the interpretation of that score?
 
+## Active releases
+
+PopGenLM Bench v0.1, v0.2, and v0.3 are all active, versioned benchmarks. Their release materials remain available and runnable alongside one another.
+
+## v0.3.0 — evolutionary-evidence results benchmark
+
+Version 0.3 adds precomputed model-concordance, evolutionary-evidence, LD-sensitivity, genomic-context, and genotype-sample-quality results for 10,000 *Arabidopsis thaliana* variants. It does not rerun inference in the publication notebook.
+
+- [v0.3 results notebook](notebooks/popgenlm-bench-v0.3.ipynb)
+- [v0.3 release documentation](docs/v0.3_release.md)
+- [v0.3 asset manifest](data/benchmarks/v0.3/manifest.json)
+- [v0.3 model-evidence figure](figures/v0.3/model_evidence.svg) and [genotype UMAP figure](figures/v0.3/genotype_umap_geography.svg)
+
+The primary population-oriented score is `log P(minor allele) - log P(major allele)`; raw REF-to-ALT scores are kept separately. v0.3 reports descriptive correlations and deterministic bootstrap intervals, not hypothesis-test p-values or direct measurements of fitness, selection, or pathogenicity.
+
+See [the v0.3 release documentation](docs/v0.3_release.md) for validation, provenance, limitations, and SHA-256 verification.
+
 ## v0.2.0 — population-aware GPN benchmark
 
 PopGenLM Bench v0.2.0 extends the project from an engineering fixture to a
