@@ -122,6 +122,16 @@ Run linting:
 The v0.2.0 release is validated by 58 automated tests and GitHub Actions
 on Python 3.11 and 3.12.
 
+## v0.3 CPU workflows
+
+The portable H3–H6 command-line workflows are under `scripts/v0.3/`. Install their optional scientific and plotting dependencies with:
+
+    pip install -e ".[v03]"
+
+The `plantcad` extra contains only the optional PyTorch/Transformers tokenizer layer; the validated PlantCAD model stack remains environment-specific and is not installed by ordinary CI.
+
+See `docs/v0.3_production_provenance.md` for validated-source mappings and pinned scientific contracts.
+
 ## v0.1 — reproducible analysis foundation
 
 Version 0.1 preserves the first verified public PopGenLM Bench engineering

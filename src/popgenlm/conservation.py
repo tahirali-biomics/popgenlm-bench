@@ -7,20 +7,23 @@ import gzip
 import math
 from collections import Counter
 from pathlib import Path
-from typing import Iterable, Mapping, TextIO
-
 
 # Explicit mappings are intentional: RefSeq accessions are not derivable from
 # the numeric VCF chromosome labels without an assembly-specific contract.
 CHROM_MAP = {
-    "1": "NC_003070.9", "2": "NC_003071.7", "3": "NC_003074.8",
-    "4": "NC_003075.7", "5": "NC_003076.8",
+    "1": "NC_003070.9",
+    "2": "NC_003071.7",
+    "3": "NC_003074.8",
+    "4": "NC_003075.7",
+    "5": "NC_003076.8",
 }
 TRACK_CHROM_MAP = {f"Chr{i}": fasta for i, fasta in CHROM_MAP.items()}
 EXCLUDED_TRACK_CHROMS = frozenset({"ChrC", "ChrM"})
 CHROM_LENGTHS = {
-    "NC_003070.9": 30427671, "NC_003071.7": 19698289,
-    "NC_003074.8": 23459830, "NC_003075.7": 18585056,
+    "NC_003070.9": 30427671,
+    "NC_003071.7": 19698289,
+    "NC_003074.8": 23459830,
+    "NC_003075.7": 18585056,
     "NC_003076.8": 26975502,
 }
 
@@ -93,7 +96,9 @@ def lookup_bedgraph(
     by_chrom = {}
     for row in variants:
         by_chrom.setdefault(row["fasta_chrom"], []).append(row)
-    results = {row["_key"]: {**row, "phylop": None, "status": "missing_coverage"} for row in variants}
+    results = {
+        row["_key"]: {**row, "phylop": None, "status": "missing_coverage"} for row in variants
+    }
     previous = {}
     pointers = {chrom: 0 for chrom in by_chrom}
     interval_counts = Counter()
@@ -101,12 +106,14 @@ def lookup_bedgraph(
     excluded_interval_counts = Counter()
     with gzip.open(track_path, "rt", encoding="utf-8") as handle:
         for line_number, line in enumerate(handle, 1):
-            if not line.strip() or line.startswith("track") or line.startswith("#"):
+            if not line.strip() or line.startswith(("track", "#")):
                 continue
             track_chrom, fasta_chrom, start, end, score = _parse_track_row(line, line_number)
             old = previous.get(track_chrom)
             if old is not None and start < old[1]:
-                raise TrackContractError(f"line {line_number}: interval order/overlap on {track_chrom}")
+                raise TrackContractError(
+                    f"line {line_number}: interval order/overlap on {track_chrom}"
+                )
             previous[track_chrom] = (start, end)
             if fasta_chrom is None:
                 excluded_interval_counts[track_chrom] += 1
@@ -130,7 +137,12 @@ def lookup_bedgraph(
         writer.writeheader()
         for row in variants:
             out = results[row["_key"]]
-            writer.writerow({field: out[field] if field != "phylop" or out[field] is not None else "" for field in fields})
+            writer.writerow(
+                {
+                    field: out[field] if field != "phylop" or out[field] is not None else ""
+                    for field in fields
+                }
+            )
     summary = {
         "variant_rows": len(variants),
         "unique_normalized_keys": len(variants),
@@ -146,5 +158,6 @@ def lookup_bedgraph(
     }
     if metadata_path is not None:
         import json
+
         Path(metadata_path).write_text(json.dumps(summary, indent=2) + "\n")
     return summary

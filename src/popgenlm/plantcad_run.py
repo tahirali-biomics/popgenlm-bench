@@ -1,4 +1,5 @@
 """Restartable chromosome scoring and strict input/output validation."""
+
 from __future__ import annotations
 
 import csv
@@ -7,9 +8,9 @@ import importlib.metadata
 import json
 import math
 import os
-from pathlib import Path
 import sys
 import time
+from pathlib import Path
 
 from .plantcad import coordinate_to_context, population_scores, score_contexts, validate_reference
 
@@ -27,8 +28,12 @@ def digest(path):
 def identity(path):
     p = Path(path).resolve()
     st = p.stat()
-    return {"path": str(p), "size": st.st_size, "mtime_ns": st.st_mtime_ns,
-            "ctime_ns": st.st_ctime_ns}
+    return {
+        "path": str(p),
+        "size": st.st_size,
+        "mtime_ns": st.st_mtime_ns,
+        "ctime_ns": st.st_ctime_ns,
+    }
 
 
 def write_json(path, data):
@@ -65,8 +70,9 @@ def load_variants(path, mapping, expected_count):
         if not 1 <= pos <= int(mapping[chrom]["length"]):
             raise ValueError("coordinate outside chromosome")
         population_scores(ref, alt, row["af_alt"], 0.0)
-        if not math.isclose(float(row["af_alt"]), int(row["ac_alt"]) / int(row["an"]),
-                            abs_tol=1e-12, rel_tol=1e-12):
+        if not math.isclose(
+            float(row["af_alt"]), int(row["ac_alt"]) / int(row["an"]), abs_tol=1e-12, rel_tol=1e-12
+        ):
             raise ValueError("allele frequency/count mismatch")
         identifier = row.get("variant_id") or f"{chrom}:{pos}:{ref}:{alt}"
         if identifier in seen or row_key(row) in keys:
@@ -74,8 +80,9 @@ def load_variants(path, mapping, expected_count):
         seen.add(identifier)
         keys.add(row_key(row))
         row["variant_id"] = identifier
-    return sorted(rows, key=lambda r: (int(r["chrom"]), int(r["pos"]), r["ref"],
-                                       r["alt"], r["variant_id"]))
+    return sorted(
+        rows, key=lambda r: (int(r["chrom"]), int(r["pos"]), r["ref"], r["alt"], r["variant_id"])
+    )
 
 
 def validate_scores(rows, expected):
@@ -134,10 +141,15 @@ def setup_offline(config):
     cache = Path(config["cache_dir"]).resolve()
     if Path(config["project_root"]).resolve() not in cache.parents:
         raise ValueError("cache must be inside project")
-    for variable, subdir in (("HF_HOME", "home"), ("HF_HUB_CACHE", "hub"),
-                            ("HUGGINGFACE_HUB_CACHE", "hub"), ("HF_MODULES_CACHE", "modules"),
-                            ("HF_ASSETS_CACHE", "assets"), ("XDG_CACHE_HOME", "xdg"),
-                            ("MPLCONFIGDIR", "matplotlib")):
+    for variable, subdir in (
+        ("HF_HOME", "home"),
+        ("HF_HUB_CACHE", "hub"),
+        ("HUGGINGFACE_HUB_CACHE", "hub"),
+        ("HF_MODULES_CACHE", "modules"),
+        ("HF_ASSETS_CACHE", "assets"),
+        ("XDG_CACHE_HOME", "xdg"),
+        ("MPLCONFIGDIR", "matplotlib"),
+    ):
         os.environ[variable] = str(cache / subdir)
     os.environ.pop("TRANSFORMERS_CACHE", None)
     for variable in ("HF_HUB_OFFLINE", "TRANSFORMERS_OFFLINE", "HF_DATASETS_OFFLINE"):
@@ -150,7 +162,11 @@ def preflight(config_path, import_runtime=True):
     if c["checkpoint_revision"] != REVISION:
         raise ValueError("wrong pinned revision")
     if (c["dtype"], c["batch_size"], c["context_length"], c["target_index"]) != (
-            "float32", 8, 512, 255):
+        "float32",
+        8,
+        512,
+        255,
+    ):
         raise ValueError("unexpected scoring configuration")
     if (c["atol"], c["rtol"]) != (1e-4, 1e-4):
         raise ValueError("changed comparison tolerances")
@@ -173,12 +189,13 @@ def preflight(config_path, import_runtime=True):
     setup_offline(c)
     locations = {"production": __file__}
     if import_runtime:
-        import torch
-        import torchvision
-        import torchaudio
-        import transformers
         import causal_conv1d
         import mamba_ssm
+        import torch
+        import torchaudio
+        import torchvision
+        import transformers
+
         if torch.__version__ != "2.5.1+cu124" or torch.version.cuda != "12.4":
             raise ValueError("PyTorch/CUDA build changed")
         if torch._C._GLIBCXX_USE_CXX11_ABI is not False:
@@ -191,14 +208,21 @@ def preflight(config_path, import_runtime=True):
     for chrom in sorted(mapping, key=int):
         subset = [r for r in rows if r["chrom"] == chrom]
         if subset:
-            check_resume(out / f"chr{chrom}.tsv", out / f"chr{chrom}.complete.json",
-                         fingerprint, subset)
-    report = {"status": "PREFLIGHT_PASS", "rows": len(rows),
-              "chromosomes": {k: sum(r["chrom"] == k for r in rows) for k in mapping},
-              "frequency_ties": sum(float(r["af_alt"]) == 0.5 for r in rows),
-              "python": sys.executable, "module_locations": locations,
-              "config_sha256": fingerprint, "output_dir": str(out),
-              "weights_loaded": False, "gpu_work_executed": False}
+            check_resume(
+                out / f"chr{chrom}.tsv", out / f"chr{chrom}.complete.json", fingerprint, subset
+            )
+    report = {
+        "status": "PREFLIGHT_PASS",
+        "rows": len(rows),
+        "chromosomes": {k: sum(r["chrom"] == k for r in rows) for k in mapping},
+        "frequency_ties": sum(float(r["af_alt"]) == 0.5 for r in rows),
+        "python": sys.executable,
+        "module_locations": locations,
+        "config_sha256": fingerprint,
+        "output_dir": str(out),
+        "weights_loaded": False,
+        "gpu_work_executed": False,
+    }
     return c, rows, mapping, report
 
 
@@ -242,10 +266,14 @@ def compare_overlap(all_rows, comparison, atol, rtol):
             result[field + "_abs_diff"] = diff
             result[field + "_pass"] = diff <= atol + rtol * abs(expected)
         comparisons.append(result)
-    summary = {field: {"rows": 100, "max_abs_difference": max(
-        r[field + "_abs_diff"] for r in comparisons),
-        "failed_variant_ids": [r["variant_id"] for r in comparisons if not r[field + "_pass"]]}
-        for field in ("adapter_batch1", "adapter_batch8", "authors_reference")}
+    summary = {
+        field: {
+            "rows": 100,
+            "max_abs_difference": max(r[field + "_abs_diff"] for r in comparisons),
+            "failed_variant_ids": [r["variant_id"] for r in comparisons if not r[field + "_pass"]],
+        }
+        for field in ("adapter_batch1", "adapter_batch8", "authors_reference")
+    }
     return comparisons, summary
 
 
@@ -253,7 +281,9 @@ def run(config_path):
     c, variants, mapping, report = preflight(config_path)
     print(json.dumps(report), flush=True)
     import torch
+
     from .plantcad import load_local_model
+
     if not os.environ.get("SLURM_JOB_ID") or not torch.cuda.is_available():
         raise ValueError("inference requires a CUDA SLURM allocation")
     torch.manual_seed(0)
@@ -270,9 +300,19 @@ def run(config_path):
         if ctx[255] != row["ref"]:
             raise ValueError("REF context mismatch")
         contexts.append(ctx)
-    software = {name: importlib.metadata.version(name) for name in
-                ("torch", "torchvision", "torchaudio", "transformers", "mamba-ssm",
-                 "causal-conv1d", "numpy", "pandas")}
+    software = {
+        name: importlib.metadata.version(name)
+        for name in (
+            "torch",
+            "torchvision",
+            "torchaudio",
+            "transformers",
+            "mamba-ssm",
+            "causal-conv1d",
+            "numpy",
+            "pandas",
+        )
+    }
     print("GPU", torch.cuda.get_device_name(0), "software", json.dumps(software), flush=True)
     t = time.perf_counter()
     model, tokenizer = load_local_model(c["checkpoint"])
@@ -293,15 +333,28 @@ def run(config_path):
         rows = check_resume(table, marker, fp, subset)
         if rows is None:
             start = time.perf_counter()
-            rows = [{**variant, **score} for variant, score in zip(
-                subset, score_contexts(model, tokenizer, [contexts[i] for i in indexes],
-                                       subset, batch_size=8))]
+            rows = [
+                {**variant, **score}
+                for variant, score in zip(
+                    subset,
+                    score_contexts(
+                        model, tokenizer, [contexts[i] for i in indexes], subset, batch_size=8
+                    ),
+                )
+            ]
             torch.cuda.synchronize()
             seconds = time.perf_counter() - start
             validate_scores(rows, subset)
             write_tsv(table, rows)
-            write_json(marker, {"fingerprint": fp, "rows": len(rows), "sha256": digest(table),
-                                "scoring_seconds": seconds})
+            write_json(
+                marker,
+                {
+                    "fingerprint": fp,
+                    "rows": len(rows),
+                    "sha256": digest(table),
+                    "scoring_seconds": seconds,
+                },
+            )
             timings[chrom] = {"rows": len(rows), "seconds": seconds, "reused": False}
         else:
             timings[chrom] = {"rows": len(rows), "seconds": 0, "reused": True}
@@ -311,8 +364,9 @@ def run(config_path):
     combined = out / "plantcad_10000.tsv"
     if combined.exists():
         validate_scores(read_tsv(combined), variants)
-        if read_tsv(combined) != [{k: "" if v is None else str(v) for k, v in r.items()}
-                                  for r in all_rows]:
+        if read_tsv(combined) != [
+            {k: "" if v is None else str(v) for k, v in r.items()} for r in all_rows
+        ]:
             raise ValueError("combined output differs from chromosome outputs")
     else:
         write_tsv(combined, all_rows)
@@ -322,19 +376,33 @@ def run(config_path):
     scored = sum(t["rows"] for t in timings.values() if not t["reused"])
     passed = all(not item["failed_variant_ids"] for item in overlap_summary.values())
     summary = {
-        "status": "PASS" if passed else "FAIL", "job_id": os.environ["SLURM_JOB_ID"],
-        "node": os.environ.get("SLURMD_NODENAME"), "gpu": torch.cuda.get_device_name(0),
-        "python": sys.version, "executable": sys.executable, "prefix": sys.prefix,
-        "software": software, "cuda_build": torch.version.cuda,
-        "cxx11_abi": torch._C._GLIBCXX_USE_CXX11_ABI, "dtype": "float32",
-        "config_sha256": fp, "rows": len(all_rows), "unique_ids": len({r["variant_id"] for r in all_rows}),
-        "model_load_seconds": load_seconds, "warmed_scoring_seconds": total_seconds,
+        "status": "PASS" if passed else "FAIL",
+        "job_id": os.environ["SLURM_JOB_ID"],
+        "node": os.environ.get("SLURMD_NODENAME"),
+        "gpu": torch.cuda.get_device_name(0),
+        "python": sys.version,
+        "executable": sys.executable,
+        "prefix": sys.prefix,
+        "software": software,
+        "cuda_build": torch.version.cuda,
+        "cxx11_abi": torch._C._GLIBCXX_USE_CXX11_ABI,
+        "dtype": "float32",
+        "config_sha256": fp,
+        "rows": len(all_rows),
+        "unique_ids": len({r["variant_id"] for r in all_rows}),
+        "model_load_seconds": load_seconds,
+        "warmed_scoring_seconds": total_seconds,
         "warmed_variants_per_second": scored / total_seconds if total_seconds else None,
         "peak_gpu_allocated_bytes": torch.cuda.max_memory_allocated(),
-        "peak_gpu_reserved_bytes": torch.cuda.max_memory_reserved(), "chromosomes": timings,
-        "frequency_ties": report["frequency_ties"], "atol": c["atol"], "rtol": c["rtol"],
-        "overlap": overlap_summary, "score_sha256": digest(combined),
-        "all_ref_and_token_checks_passed": True, "all_scores_finite_and_oriented": True,
+        "peak_gpu_reserved_bytes": torch.cuda.max_memory_reserved(),
+        "chromosomes": timings,
+        "frequency_ties": report["frequency_ties"],
+        "atol": c["atol"],
+        "rtol": c["rtol"],
+        "overlap": overlap_summary,
+        "score_sha256": digest(combined),
+        "all_ref_and_token_checks_passed": True,
+        "all_scores_finite_and_oriented": True,
     }
     write_json(out / "run_summary.json", summary)
     print(json.dumps(summary, indent=2), flush=True)

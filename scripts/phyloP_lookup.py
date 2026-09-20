@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """CLI for the CPU-only streaming PlantRegMap PhyloP lookup."""
+
 import argparse
-import sys
+import importlib.util
 from pathlib import Path
 
-import importlib.util
 module_path = Path(__file__).resolve().parents[1] / "src" / "popgenlm" / "conservation.py"
 spec = importlib.util.spec_from_file_location("popgenlm_conservation", module_path)
 module = importlib.util.module_from_spec(spec)
