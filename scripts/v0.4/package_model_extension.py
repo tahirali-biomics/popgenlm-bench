@@ -150,7 +150,7 @@ AlphaGenome: explicit **AlphaGenome 1 API v1 / ALL_FOLDS**, pinned SDK `0.11.0`,
 
 ## Worked loci
 
-The original AT1G01690 and lexicographically first predefined AlphaGenome gene were selected independently of new model gains.
+The original AT1G01690 and lexicographically first predefined AlphaGenome gene were selected independently of new model gains. The AlphaGenome worked gene AT2G22240 does not meet the frozen held-out significance threshold, so its shortlist is illustrative and contributes no recovery outcome. The other four predefined genes supply the AlphaGenome endpoint denominator, across only two chromosome blocks.
 
 {table(pd.DataFrame(worked))}
 
