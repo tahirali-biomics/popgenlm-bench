@@ -1,6 +1,7 @@
 """Local restricted-use review report and offline raw-score CPU notebook."""
 
 import argparse
+import ast
 import hashlib
 import json
 import shutil
@@ -52,6 +53,11 @@ def package(run, pilot, worktree, bundle):
                 "ci95",
             ]
         ]
+        z = z.copy()
+        z["delta_pp"] = z.pop("delta").map(lambda value: f"{100 * value:+.1f}")
+        z["CI95_pp"] = z.pop("ci95").map(
+            lambda value: ", ".join(f"{100 * v:.1f}" for v in ast.literal_eval(value))
+        )
         tables.append("### " + scope + "\n\n" + table(z))
     worked = []
     for gene in ["AT1G01690", min(protocol["alpha_subset"])]:
