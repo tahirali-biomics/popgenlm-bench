@@ -91,9 +91,26 @@ lines += [
     "| Ranking | Top five SNPs | Newly included versus annotation baseline |",
     "|---|---|---|",
 ]
+all_rankings = pd.read_csv(analysis / "rankings.tsv", sep="\t")
 base = set(worked.loc[worked.ranking_model == "annotations", "variant_id"])
 for name, g in worked.groupby("ranking_model", sort=True):
     ordered = g.sort_values("rank").variant_id.tolist()
+    paired = (
+        all_rankings[
+            (all_rankings.gene == s["worked_locus"])
+            & (all_rankings.scope == "model_covered")
+            & (all_rankings.ranking_model == name)
+        ]
+        .sort_values("paired_baseline_rank")
+        .head(5)
+    )
+    base = set(paired.variant_id)
+    if name == "nemo_bnapus_transfer":
+        lines.append(
+            "| annotations_on_nemo_covered_candidates | "
+            + ", ".join(paired.variant_id)
+            + " | none |"
+        )
     lines.append(
         f"| {name} | "
         + ", ".join(ordered)

@@ -148,6 +148,8 @@ for scope in ["model_covered", "shared_all_runnable"]:
             ranked = ranked.copy()
             ranked["rank"] = np.arange(1, len(ranked) + 1)
             ranked["ranking_model"] = model
+            baseline_rank = {variant: i + 1 for i, variant in enumerate(baseline.variant_id)}
+            ranked["paired_baseline_rank"] = ranked.variant_id.map(baseline_rank)
             ranked["scope"] = scope
             rankings.append(ranked)
         for endpoint in ["independent_nucleotide", "heldout_mapping_signal"]:

@@ -31,7 +31,9 @@ manifest = {
         "sha256": hashlib.sha256(p.read_bytes()).hexdigest(),
     }
     for p in sorted(out.rglob("*"))
-    if p.is_file() and p.name not in ["bundle_manifest.json", "reanalyze.ipynb"]
+    if p.is_file()
+    and p.name not in ["bundle_manifest.json", "reanalyze.ipynb"]
+    and "results/analysis/" not in str(p.relative_to(out))
 }
 (out / "bundle_manifest.json").write_text(
     json.dumps(
