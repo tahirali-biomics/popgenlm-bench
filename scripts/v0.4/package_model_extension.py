@@ -59,6 +59,20 @@ def package(run, pilot, worktree, bundle):
             lambda value: ", ".join(f"{100 * v:.1f}" for v in ast.literal_eval(value))
         )
         tables.append("### " + scope + "\n\n" + table(z))
+    direct = pd.read_csv(out / "direct_comparisons.tsv", sep="\t")
+    direct_display = direct[
+        [
+            "challenger",
+            "comparator",
+            "model_hits",
+            "baseline_hits",
+            "loci",
+            "into_top5",
+            "out_of_top5",
+        ]
+    ]
+    concordance = pd.read_csv(out / "score_concordance.tsv", sep="\t")
+    concordance_display = concordance[concordance.gene == "all_SNPs"].round(3)
     worked = []
     for gene in ["AT1G01690", min(protocol["alpha_subset"])]:
         for method in [
@@ -109,6 +123,16 @@ Local RAMSES review. Endpoint throughout is **held-out association-signal recove
 The carried-forward PlantCAD2-S signed 512bp result is asserted exactly at **22/34 versus 17/34**, five gains/zero losses. Its old shared-coverage result remains **8/14 versus 8/14**, as do saved B. napus nemo transfer scores. Native A. thaliana nemo remains unavailable because family-safe weights/folds and reconciled training inputs are missing. Signed-rule results on the original 40 loci remain exploratory; no independent validation is claimed.
 
 ![Paired results](results/analysis/model_comparison.png)
+
+## Direct matched model comparison
+
+{table(direct_display)}
+
+In this table baseline_hits is the named PlantCAD2 comparator's recovery, not the annotation baseline. Exact paired intervals and per-locus outcomes are in direct_comparisons.tsv and direct_per_locus.tsv; every row uses the same SNPs and loci for both models.
+
+{table(concordance_display)}
+
+Absolute-LLR correlations are descriptive across the same SNPs at each context; per-locus correlations are also saved. They do not establish regulatory function.
 
 ## Coverage
 
@@ -189,6 +213,9 @@ python implementation/scripts/v0.4/integrate_models.py --run . --pilot pilot
         "frozen_scores.tsv",
         "coverage.tsv",
         "worked_locus_top5.tsv",
+        "direct_comparisons.tsv",
+        "direct_per_locus.tsv",
+        "score_concordance.tsv",
     ]
     for name in outputs:
         shutil.copy2(out / name, bundle / "expected" / name)
@@ -224,7 +251,7 @@ for name,h in manifest['files'].items():
  assert hashlib.sha256((b/name).read_bytes()).hexdigest()==h,name
 print('PASS immutable files:',len(manifest['files']))
 subprocess.run([sys.executable,'-I','-B','implementation/scripts/v0.4/integrate_models.py','--run','.','--pilot','pilot'],check=True)
-for name in ['metrics.json','paired_metrics.tsv','rankings.tsv','per_locus_outcomes.tsv','frozen_scores.tsv','coverage.tsv','worked_locus_top5.tsv']:
+for name in ['metrics.json','paired_metrics.tsv','rankings.tsv','per_locus_outcomes.tsv','frozen_scores.tsv','coverage.tsv','worked_locus_top5.tsv','direct_comparisons.tsv','direct_per_locus.tsv','score_concordance.tsv']:
  assert (b/'results/analysis'/name).read_bytes()==(b/'expected'/name).read_bytes(),name
 print('PASS exact numerical reproduction')"""),
         nbf.v4.new_code_cell("""import pandas as pd

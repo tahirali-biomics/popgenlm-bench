@@ -225,6 +225,57 @@ def integrate(run, pilot):
     rank.to_csv(out / "rankings.tsv", sep="\t", index=False)
     pd.DataFrame(metrics).to_csv(out / "paired_metrics.tsv", sep="\t", index=False)
     (out / "metrics.json").write_text(json.dumps(metrics, indent=2))
+    # Direct paired comparisons use explicit identical-candidate scopes.
+    direct, direct_loci = [], []
+    pairs = [
+        ("matched_MLM", "botanic1_s_512_abs", "plantcad2_s_512_abs"),
+        ("matched_MLM", "botanic1_s_4096_abs", "plantcad2_s_4096_abs"),
+        ("matched_MLM", "botanic1_s_512_signed_exploratory", "plantcad2_s_512_signed_exploratory"),
+        ("alpha_MLM_shared", "alphagenome_abs", "plantcad2_s_512_abs"),
+        ("alpha_MLM_shared", "alphagenome_abs", "plantcad2_s_4096_abs"),
+    ]
+    for scope, challenger, comparator in pairs:
+        left = rec[(rec.scope == scope) & (rec.method == challenger)].set_index("gene")
+        right = rec[(rec.scope == scope) & (rec.method == comparator)].set_index("gene")
+        assert set(left.index) == set(right.index)
+        rows = []
+        for gene in sorted(left.index):
+            assert left.loc[gene, "candidates"] == right.loc[gene, "candidates"]
+            row = {
+                "gene": gene,
+                "block": left.loc[gene, "block"],
+                "model_hit": int(left.loc[gene, "model_hit"]),
+                "baseline_hit": int(right.loc[gene, "model_hit"]),
+            }
+            rows.append(row)
+            direct_loci.append(
+                dict(scope=scope, challenger=challenger, comparator=comparator, **row)
+            )
+        direct.append(
+            dict(scope=scope, challenger=challenger, comparator=comparator, **summarize(rows))
+        )
+    pd.DataFrame(direct).to_csv(out / "direct_comparisons.tsv", sep="\t", index=False)
+    pd.DataFrame(direct_loci).to_csv(out / "direct_per_locus.tsv", sep="\t", index=False)
+    from scipy.stats import spearmanr
+
+    concordance = []
+    for length in [512, 4096]:
+        a, b = f"botanic1_s_{length}", f"plantcad2_s_{length}"
+        if a not in x:
+            continue
+        for label, frame in [("all_SNPs", x)] + list(x.groupby("gene", sort=True)):
+            finite = frame[[a, b]].dropna()
+            concordance.append(
+                {
+                    "gene": label,
+                    "context_bp": length,
+                    "SNPs": len(finite),
+                    "absolute_LLR_spearman": float(
+                        spearmanr(abs(finite[a]), abs(finite[b])).statistic
+                    ),
+                }
+            )
+    pd.DataFrame(concordance).to_csv(out / "score_concordance.tsv", sep="\t", index=False)
     # Confirm original results survive extension; never substitute partial coverage.
     full_metrics = (
         pd.DataFrame(metrics)
