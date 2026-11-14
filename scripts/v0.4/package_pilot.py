@@ -81,6 +81,8 @@ cells.append(
         "source": code.splitlines(keepends=True),
     }
 )
+for i, cell in enumerate(cells):
+    cell["id"] = "pilot-cell-" + str(i)
 notebook = {
     "cells": cells,
     "metadata": {
