@@ -10,8 +10,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
 import numpy as np
 import pandas as pd
 
-from popgenlm.regulatory import percentile, rank_candidates
-from popgenlm.regulatory_transfer import transfer_magnitude
+from popgenlm.regulatory import ALIASES, context, percentile, rank_candidates
+from popgenlm.regulatory_transfer import allele_sequences, cache_key, transfer_magnitude
 
 
 def sha(p):
@@ -27,15 +27,36 @@ def verify(run):
         assert sha(target) == json.loads(p.read_text())["sha256"]
         checked[str(target)] = sha(target)
     # Scores must reconstruct from paired cached predictions, without API access.
+    candidates = pd.read_csv(run / "inputs/frozen/candidates.tsv", sep="\t")
+    reference = {}
+    name = None
+    with Path(
+        "/projects/ag-demeaux/tali/PopGenLM/data/reference/TAIR10.1_genomic.fna"
+    ).open() as fasta:
+        for line in fasta:
+            if line.startswith(">"):
+                name = line[1:].split()[0]
+                reference[name] = []
+            else:
+                reference[name].append(line.strip().upper())
+    reference = {k: "".join(v) for k, v in reference.items()}
+    variants = candidates.set_index("variant_id")
     count = 0
     cache = run / "results/alphagenome/cache"
     for p in sorted((run / "results/alphagenome").glob("AT*.tsv")):
         for r in pd.read_csv(p, sep="\t").itertuples():
+            variant = variants.loc[r.variant_id]
+            sequence, focal = context(
+                reference[ALIASES[str(variant.chrom)]], int(variant.pos), variant.ref, 131072
+            )
+            sequences = allele_sequences(sequence, focal, variant.ref, variant.alt)
             pair = []
-            for key in [r.ref_cache, r.alt_cache]:
+            for key, sequence in zip([r.ref_cache, r.alt_cache], sequences):
                 path = cache / (key + ".npz")
                 m = json.loads(path.with_suffix(".json").read_text())
                 assert sha(path) == m["sha256"]
+                assert key == cache_key(sequence, m["specification"])
+                assert m["sequence_sha256"] == hashlib.sha256(sequence.encode()).hexdigest()
                 with np.load(path) as data:
                     pair.append(data["central"])
             assert np.isclose(r.score, transfer_magnitude(*pair), atol=1e-14, rtol=1e-12)
@@ -47,6 +68,10 @@ def verify(run):
         assert np.isfinite(x.raw_alt_minus_ref).all()
         assert np.allclose(x.raw_alt_minus_ref, (x.llr_forward + x.llr_rc) / 2)
         assert np.allclose(x.magnitude, abs(x.raw_alt_minus_ref))
+        af = variants.loc[x.variant_id, "af_alt"].to_numpy()
+        assert np.allclose(
+            x.minor_minus_major, np.where(af > 0.5, -x.raw_alt_minus_ref, x.raw_alt_minus_ref)
+        )
     scores = pd.read_csv(out / "frozen_scores.tsv", sep="\t").set_index(["gene", "variant_id"])
     candidates = pd.read_csv(run / "inputs/frozen/candidates.tsv", sep="\t")
     ranks = pd.read_csv(out / "rankings.tsv", sep="\t")
