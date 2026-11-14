@@ -135,7 +135,7 @@ def paired_recovery(records, replicates=2000, seed=20261114):
         "loci": len(records),
         "blocks": len(blocks),
         "baseline": float(np.mean([r["baseline_hit"] for r in records])),
-        "model": float(np.mean([r["model_hit"] for r in records])),
+        "model_recovery": float(np.mean([r["model_hit"] for r in records])),
         "delta": float(differences.mean()),
         "ci95": np.quantile(estimates, [0.025, 0.975]).tolist(),
         "status": "descriptive_block_bootstrap",

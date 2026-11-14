@@ -15,7 +15,7 @@ run = Path(a.run)
 out = Path(a.output)
 out.mkdir(parents=True, exist_ok=True)
 work = Path(__file__).resolve().parents[2]
-for rel in ["inputs/frozen", "results", "manifests"]:
+for rel in ["inputs", "results", "manifests"]:
     shutil.copytree(run / rel, out / rel, dirs_exist_ok=True)
 shutil.copytree(work / "scripts/v0.4", out / "implementation/scripts/v0.4", dirs_exist_ok=True)
 shutil.copytree(
@@ -27,7 +27,8 @@ shutil.copytree(
 revision = subprocess.check_output(["git", "-C", str(work), "rev-parse", "HEAD"], text=True).strip()
 manifest = {
     str(p.relative_to(out)): {
-        "bytes": p.stat().st_size, "sha256": hashlib.sha256(p.read_bytes()).hexdigest()
+        "bytes": p.stat().st_size,
+        "sha256": hashlib.sha256(p.read_bytes()).hexdigest(),
     }
     for p in sorted(out.rglob("*"))
     if p.is_file() and p.name not in ["bundle_manifest.json", "reanalyze.ipynb"]

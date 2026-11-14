@@ -41,6 +41,7 @@ def test_lmm_alt_sign_and_null():
 def test_zero_endpoint_and_paired_blocks():
     assert paired_recovery([])["delta"] is None
     x = paired_recovery([{"block": "1", "model_hit": 1, "baseline_hit": 0}] * 3, 100)
+    assert x["model_recovery"] == 1
     assert x["delta"] == 1 and x["ci95"] == [1, 1] and x["blocks"] == 1
 
 

@@ -71,6 +71,33 @@ for name, mapping in scores.items():
         }
     )
 pd.DataFrame(coverage).to_csv(out / "coverage.tsv", sep="\t", index=False)
+
+# Direction is separate from magnitude-based ranking, at the held-out lead only.
+direction = []
+if "nemo_bnapus_transfer" in scores:
+    for gene, full in x.groupby("gene", sort=True):
+        finite = full[np.isfinite(full.heldout_p) & (full.heldout_p > 0)].sort_values(
+            ["heldout_p", "variant_id"]
+        )
+        if len(finite):
+            row = finite.iloc[0]
+            if row.heldout_p < 0.05 / len(full) and np.isfinite(row.nemo_bnapus_transfer):
+                direction.append(
+                    {
+                        "gene": gene,
+                        "variant_id": row.variant_id,
+                        "beta_alt": row.heldout_beta_alt,
+                        "nemo_delta": row.nemo_bnapus_transfer,
+                        "sign_agreement": bool(
+                            np.sign(row.heldout_beta_alt) == np.sign(row.nemo_bnapus_transfer)
+                        ),
+                        "note": "held-out association direction; not isolated nucleotide validation",
+                    }
+                )
+pd.DataFrame(
+    direction, columns=["gene", "variant_id", "beta_alt", "nemo_delta", "sign_agreement", "note"]
+).to_csv(out / "nemo_direction.tsv", sep="\t", index=False)
+
 metrics = []
 per_locus = []
 rankings = []
