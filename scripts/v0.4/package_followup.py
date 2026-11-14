@@ -185,7 +185,7 @@ Signed 512bp LLR at w=.2 improves descriptive recovery by **14.7 percentage poin
 
 ![Paired exploratory results](results/paired_results.png)
 
-The shared-subset exploratory rules are reranked from scratch on the same nemo-covered candidates, with full-panel target/significance definitions unchanged. Their exact counts and denominators are in `paired_metrics.tsv` under `shared_all_runnable`; the original 8/14 comparison is kept distinct.
+The shared-subset exploratory rules are reranked from scratch on the same nemo-covered candidates, with full-panel target/significance definitions unchanged. Their exact counts and denominators are in `paired_metrics.tsv` under `shared_all_runnable`; the original 8/14 comparison is kept distinct. In particular the signed 512bp challenger remains 8/14 versus 8/14 on that shared subset, with no gains or losses.
 
 ## Model coverage and access
 
@@ -312,6 +312,35 @@ display(Image(filename='results/paired_results.png'))"""),
             "name": "popgenlm-v04",
         }
         nbf.write(nb, bundle / "reanalyze.ipynb")
+    # Refresh review text/source after a local review fix; regenerated products and
+    # executed notebooks are excluded from immutable inputs.
+    shutil.copy2(run / "REPORT.md", bundle / "REPORT.md")
+    for path in (run / "manifests").glob("*"):
+        if path.is_file():
+            shutil.copy2(path, bundle / "manifests" / path.name)
+    dest = bundle / "implementation/scripts/v0.4/followup_analysis.py"
+    shutil.copy2(worktree / "scripts/v0.4/followup_analysis.py", dest)
+    files = {
+        str(p.relative_to(bundle)): sha(p)
+        for p in sorted(bundle.rglob("*"))
+        if p.is_file()
+        and p.suffix != ".ipynb"
+        and not str(p.relative_to(bundle)).startswith("results/")
+        and p != bundle / "bundle_manifest.json"
+        and p.name != "job_accounting.tsv"
+    }
+    (bundle / "bundle_manifest.json").write_text(
+        json.dumps(
+            {
+                "files": files,
+                "implementation_revision": subprocess.check_output(
+                    ["git", "-C", str(worktree), "rev-parse", "HEAD"], text=True
+                ).strip(),
+                "analysis_source_sha256": sha(dest),
+            },
+            indent=2,
+        )
+    )
     print("REPORT", run / "REPORT.md")
     print("BUNDLE", bundle)
 

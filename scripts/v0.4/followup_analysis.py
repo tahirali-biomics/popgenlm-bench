@@ -255,11 +255,11 @@ def analyze(pilot, run):
         "Paired change versus annotation baseline (percentage points)\n95% descriptive bootstrap; 5 chromosome blocks"
     )
     ax.set_title(
-        "Exploratory score rules on the original 40 loci\n34 held-out association signals; baseline 17/34; nucleotide endpoint unestimable"
+        "Exploratory rules on original 40 loci\nHeld-out association signals: 34 loci; baseline 17/34\nIndependent nucleotide endpoint: not estimable"
     )
     fig.tight_layout()
-    fig.savefig(out / "paired_results.png", dpi=180)
-    fig.savefig(out / "paired_results.svg")
+    fig.savefig(out / "paired_results.png", dpi=180, bbox_inches="tight")
+    fig.savefig(out / "paired_results.svg", bbox_inches="tight")
     plt.close(fig)
     # Record every source consumed, including original saved ranks and protocol.
     for p in [
