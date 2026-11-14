@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-14",
+  "original_pilot": "regulatory_pilot_20261114",
+  "status": "exploratory rules on original 40 loci; no confirmatory rule selection from these outcomes",
+  "exploratory_weights": [0.1, 0.2, 0.4],
+  "rules": ["absolute LLR at 512 and 4096 bp, weights .1/.2/.4", "signed ALT-minus-REF 512, weight .2", "negative ALT-minus-REF 512, weight .2", "mean within-locus magnitude percentiles across both contexts, weight .2"],
+  "combination": "(1-weight)*original annotation baseline + weight*within-locus transformed score percentile; deterministic variant ID ties",
+  "independent_validation_rule": "retain original abs_512 weight .2 without fitting; freeze before any new-locus scoring; no performance-based choice",
+  "revised_evidence_eligibility": "natural biallelic ACGT SNP, uniquely allele-aligned to TAIR10.1 and exact VCF; individual-nucleotide assay supports expression; at least 10 called ALT carriers and 10 REF carriers in discovery, call>=.9; gene not within 50kb of original locus windows; association/LD thresholds retained for primary comparable prioritization; otherwise descriptive evidence cases only",
+  "new_scores": "Do not score independent cases until evidence, candidate tables and nonoverlap are frozen. Relative SNP notation alone is insufficient coordinate proof.",
+  "weights_fit": false,
+  "endpoint": "original frozen held-out mapping signal, 0.05/full candidate count, candidate matched; no causal interpretation",
+  "bootstrap": "2000 paired draws of whole chromosome blocks; seed 20261114; only five blocks",
+  "alphagenome": "retain original five loci and aggregation; do not request predictions until authorized access and concrete model/track metadata pinned"
+}
