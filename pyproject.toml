@@ -1,6 +1,6 @@
 [project]
 name = "popgenlm-bench"
-version = "0.3.0"
+version = "0.4.0"
 description = "Reproducible evaluation of genomic language-model variant scores using population-genetic and evolutionary evidence."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -16,7 +16,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=8",
-    "ruff>=0.6",
+    "ruff==0.11.13",
 ]
 
 v03 = [
@@ -57,3 +57,7 @@ exclude = [
 
 [tool.ruff.lint]
 ignore = ["EXE002"]
+
+[tool.ruff.lint.per-file-ignores]
+# Retain the archived review's local locus variable without changing its pinned source bytes.
+"review/v0.4/review.py" = ["E741"]

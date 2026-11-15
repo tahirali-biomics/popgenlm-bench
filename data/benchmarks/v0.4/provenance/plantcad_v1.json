@@ -1,0 +1,42 @@
+{
+  "model": "plantcad_v1",
+  "checkpoint": "PROJECT_ROOT/models/plantcad/PlantCaduceus_l32_e624c13c3d35415348b854c87a218893b23564f7",
+  "weights": {
+    "config.json": "c3cb3d4ef77160a053835823a11dcf8a4b2a7913ce103369731587693255eee1",
+    "pytorch_model.bin": "308d9125a0e2a350252c902c27c308bbcf56a1d8198f399f9e7c26d9b552ec10",
+    ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+    "tokenization_caduceus.py": "628f64872b5f466416d15716297b905c0cc6162c49b37b50b93a456c4c112e73",
+    "tokenizer_config.json": "315463dde4293b24b3a45d1e5c54f3003aca791ae975db22b54cb2f4b8fc5b47",
+    "modeling_caduceus.py": "7fd8b55a1c7b1ac30fe2e33534d568d7f76c5e228deb2875cfbdeb9eec194f8e",
+    "special_tokens_map.json": "861c50dcd75107ba291017c96a1ef74ba76c9478396e521bae87e75421a6be5e",
+    "configuration_caduceus.py": "f6d9785a13b3f62eef8d0911954d69cf2e60ac26e83ddc3975f8710c7d6864f9",
+    "README.md": "c0778a49f845d600ed93b6e6756c70e39ad7fb0208892ca2763964ed5060af47",
+    "modeling_rcps.py": "38e8e3dc8f7583a9fee9c2b69369db8bf4b340c8db92208dd02500bf53ac7da5",
+    "tokenizer.json": "b22a14e4ea2dc98b0e80db6a38494bd1f6d386959935e38a3a6bb1d03215099f"
+  },
+  "versions": {
+    "torch": "2.5.1+cu124",
+    "transformers": "4.49.0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "mamba-ssm": "2.2.4",
+    "causal-conv1d": "1.5.0.post8"
+  },
+  "python": "ENVIRONMENTS/conda_envs/plantcad_clean/bin/python",
+  "platform": "Linux-5.14.0-570.150.1.el9_6.x86_64-x86_64-with-glibc2.34",
+  "job_id": "7609486",
+  "runs": [
+    {
+      "sha256": "eacd59d3eefd8cbb0f7a150649f7a9af50e0b8aaa8234b009a8127d38d161154",
+      "rows": 209,
+      "elapsed_seconds": 89.08158707618713,
+      "job_id": "7609486",
+      "peak_cuda_bytes": 1409651712,
+      "checkpoint": "PROJECT_ROOT/models/plantcad/PlantCaduceus_l32_e624c13c3d35415348b854c87a218893b23564f7",
+      "context_bp": 512,
+      "model": "plantcad_v1",
+      "smoke": false
+    }
+  ],
+  "orientation": "masked ALT-minus-REF logits; forward and RC averaged; magnitude for ranking"
+}

@@ -1,0 +1,15 @@
+{
+  "botanic_scores.tsv": {
+    "sha256": "6ea2c1007ccf55a79adf89997909ac2b34715f62b2ab9cb2847e0c0b889d2b62",
+    "columns": [
+      "gene",
+      "variant_id",
+      "botanic1_s_512",
+      "botanic1_s_4096"
+    ],
+    "checkpoint": "living-models/Botanic1-S",
+    "revision": "813d2d46ca40ab5cd91a6acaa8852d636224992e",
+    "acquisition": "Obtain checkpoint from the pinned Hugging Face revision after accepting its terms. Use score_botanic.py with the pinned reference, protocol and frozen candidates. Convert shard raw_alt_minus_ref to the two named columns in original candidate order. Exact original cached bytes require licensor-authorized research sharing; no unrestricted download endpoint is claimed. Verify this digest before full raw-score reconstruction.",
+    "url": "https://huggingface.co/living-models/Botanic1-S/tree/813d2d46ca40ab5cd91a6acaa8852d636224992e"
+  }
+}

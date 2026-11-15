@@ -1,0 +1,45 @@
+{
+  "reference": {
+    "accession": "GCF_000001735.4",
+    "url": "https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001735.4/",
+    "uncompressed_fasta_sha256": "de99316d1d5597e9a5d40d943ff919c17d59b77116354a5d388b183b6f21075f",
+    "genomic_fna_gz_sha256": "a182f3c71662973dc636cacd7722588c9bbe3c8ea6ce62b1bae7dac940545d47"
+  },
+  "phylop": {
+    "source": "PlantRegMap Ath_PhyloP.bedGraph.gz",
+    "url": "https://plantregmap.gao-lab.org/download_ftp.php?filepath=08-download/Arabidopsis_thaliana/sequence_conservation/Ath_PhyloP.bedGraph.gz",
+    "sha256": "8944714faaf8942cecdfe4a7b496a4d0948531dff8a8f721c390d53a775cbab7"
+  },
+  "expression": {
+    "accession": "GSE80744",
+    "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE80744",
+    "processed_tsv_gz_sha256": "36f4a904c577550eb156ae6cd3386e7f6e8e589fd752288e5f1c11d0312c12e8"
+  },
+  "cis_eqtl_source": {
+    "doi": "10.1038/s41588-024-01907-3",
+    "code_deposit": "https://zenodo.org/records/13170729"
+  },
+  "botanic": {
+    "botanic_scores.tsv": {
+      "sha256": "6ea2c1007ccf55a79adf89997909ac2b34715f62b2ab9cb2847e0c0b889d2b62",
+      "columns": [
+        "gene",
+        "variant_id",
+        "botanic1_s_512",
+        "botanic1_s_4096"
+      ],
+      "checkpoint": "living-models/Botanic1-S",
+      "revision": "813d2d46ca40ab5cd91a6acaa8852d636224992e",
+      "acquisition": "Obtain checkpoint from the pinned Hugging Face revision after accepting its terms. Use score_botanic.py with the pinned reference, protocol and frozen candidates. Convert shard raw_alt_minus_ref to the two named columns in original candidate order. Exact original cached bytes require licensor-authorized research sharing; no unrestricted download endpoint is claimed. Verify this digest before full raw-score reconstruction.",
+      "url": "https://huggingface.co/living-models/Botanic1-S/tree/813d2d46ca40ab5cd91a6acaa8852d636224992e"
+    }
+  },
+  "alphagenome": {
+    "api": "alphagenome.models.v1",
+    "model_version": "ALL_FOLDS",
+    "sdk": "0.11.0",
+    "track_metadata_sha256": "f917e21766d6940695d61bf1294557c232b4358df95b069e6d4cfa0d65186111",
+    "terms": "https://deepmind.google.com/science/alphagenome/output-terms",
+    "note": "API weights digest is unavailable; use frozen public scalar scores/illustrative track for exact CPU reproduction."
+  }
+}

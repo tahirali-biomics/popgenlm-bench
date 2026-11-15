@@ -1,0 +1,52 @@
+{
+  "model": "plantcad2_s",
+  "checkpoint": "PROJECT_ROOT/models/plantcad2/f756c255cb76e9f538c3acec04acf4214ed03fb3",
+  "weights": {
+    "config.json": "12bef3cbb6412d07323c3961e704a93053471737c837779ca929a7448dcdab6c",
+    "pytorch_model.bin": "31b75bed32318361db9dc6ccb1550b834df5361a594116af793ba3303069b81f",
+    ".gitattributes": "11ad7efa24975ee4b0c3c3a38ed18737f0658a5f75a0a96787b576a78a023361",
+    "tokenizer_config.json": "01eeb90e579abdeea46054c842690778cacf679c52c5a7d049e83ea8cf579d02",
+    "modeling_caduceus.py": "dad451b0e6a3bccf04d7b7a3ce9bbe749e74fdd37ffea0530afd7dae141f3750",
+    "special_tokens_map.json": "861c50dcd75107ba291017c96a1ef74ba76c9478396e521bae87e75421a6be5e",
+    "configuration_caduceus.py": "f6d9785a13b3f62eef8d0911954d69cf2e60ac26e83ddc3975f8710c7d6864f9",
+    "README.md": "06c54a0ee5d09f6ae2f32431c263974062af4998047d886215d84e73cc9cdd27",
+    "modeling_rcps.py": "34f35f032f65a8b658f95c40ab4d1473f1859c59908e2516791b65426ec5e0d0",
+    "tokenizer.json": "e8f67402242ca236f8ed4fd64abfac4c50d64bf37674dced9fb1c10deaabab32"
+  },
+  "versions": {
+    "torch": "2.5.1+cu124",
+    "transformers": "4.49.0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "mamba-ssm": "2.2.4",
+    "causal-conv1d": "1.5.0.post8"
+  },
+  "python": "PROJECT_ROOT/environments/v0.4/plantcad2/bin/python",
+  "platform": "Linux-5.14.0-570.150.1.el9_6.x86_64-x86_64-with-glibc2.34",
+  "job_id": "7609482",
+  "runs": [
+    {
+      "sha256": "d5ee1f552f8b33703bfba228c8173c2167e5fa6d1495ede360d606553bf48d49",
+      "rows": 209,
+      "elapsed_seconds": 26.48610496520996,
+      "job_id": "7609482",
+      "peak_cuda_bytes": 1239077376,
+      "checkpoint": "PROJECT_ROOT/models/plantcad2/f756c255cb76e9f538c3acec04acf4214ed03fb3",
+      "context_bp": 512,
+      "model": "plantcad2_s",
+      "smoke": false
+    },
+    {
+      "sha256": "fe9c30338f4b748817ad3db311db31ad729778dfc2837501af1b1e0f8ae26c7e",
+      "rows": 209,
+      "elapsed_seconds": 194.18510389328003,
+      "job_id": "7609482",
+      "peak_cuda_bytes": 3553595904,
+      "checkpoint": "PROJECT_ROOT/models/plantcad2/f756c255cb76e9f538c3acec04acf4214ed03fb3",
+      "context_bp": 4096,
+      "model": "plantcad2_s",
+      "smoke": false
+    }
+  ],
+  "orientation": "masked ALT-minus-REF logits; forward and RC averaged; magnitude for ranking"
+}

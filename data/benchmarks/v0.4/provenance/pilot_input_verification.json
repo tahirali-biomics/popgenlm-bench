@@ -1,0 +1,223 @@
+{
+  "status": "PASS",
+  "records": [
+    {
+      "path": "PROJECT_ROOT/data/incoming/1001g_v3.1_desktop/1001genomes_snp-short-indel_only_ACGTN.vcf.gz",
+      "expected": "7f825afb784b2424e35501fd8b88c32a4798013eb9fe762724addfb249007e7a",
+      "observed": "7f825afb784b2424e35501fd8b88c32a4798013eb9fe762724addfb249007e7a",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/1001g_v3.1_desktop/1001genomes_snp-short-indel_only_ACGTN.vcf.gz.tbi",
+      "expected": "2862ff882d9594875f28b4eef95c907cb517129b6edddd2b7554e25ab38cb370",
+      "observed": "2862ff882d9594875f28b4eef95c907cb517129b6edddd2b7554e25ab38cb370",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/1001g_v3.1_desktop/1001genomes_snp-short-indel_only_ACGTN_Dp10GQ20Q30_NoIndel_Bialleleic_80PcMissing.vcf.gz",
+      "expected": "51a51aa1714e535cc09012df1d73239b62f4ed3f433f7af65b3064f902d8716c",
+      "observed": "51a51aa1714e535cc09012df1d73239b62f4ed3f433f7af65b3064f902d8716c",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/1001g_v3.1_desktop/1001_genome_accession_list.zip",
+      "expected": "d297e368b5ad18263545fd4c10e28cf72630370051680d2c91cbdf1a1425c125",
+      "observed": "d297e368b5ad18263545fd4c10e28cf72630370051680d2c91cbdf1a1425c125",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/1001g_v3.1_desktop/1001g_v3.1_header.txt",
+      "expected": "7c0587c6cc5328f8719139a9772fadfb4f5c0abd0340ec952342a0bc11c05529",
+      "observed": "7c0587c6cc5328f8719139a9772fadfb4f5c0abd0340ec952342a0bc11c05529",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/1001g_v3.1_desktop/1001g_v3.1_samples.txt",
+      "expected": "4ce737137db3910b51e2651453067867fd380eaa67e67ad5f89b8a5e775255e2",
+      "observed": "4ce737137db3910b51e2651453067867fd380eaa67e67ad5f89b8a5e775255e2",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/1001g_v3.1_desktop/1001genome_coordinates.zip",
+      "expected": "3575cc2810314768a8a4f1563d7d358a6a3dc78d9eb1c29b6c7bff48c3b60711",
+      "observed": "3575cc2810314768a8a4f1563d7d358a6a3dc78d9eb1c29b6c7bff48c3b60711",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/1001g_v3.1_desktop/REAME_VCF_filter.txt",
+      "expected": "7a78999a986cba72325f065154411aafeed1abd422163f6c58a038e6812c3a57",
+      "observed": "7a78999a986cba72325f065154411aafeed1abd422163f6c58a038e6812c3a57",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/1001g_v3.1_desktop/accessions.csv",
+      "expected": "ff14c461f6087b54d97ce130998a63a659793f6ac9c121a7dc82ff92828ea291",
+      "observed": "ff14c461f6087b54d97ce130998a63a659793f6ac9c121a7dc82ff92828ea291",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/annotation_hashes.txt",
+      "expected": "57835653b068bd872e5a2e29aea9fef48a1726fe3c0fac336e2c6ea98bb6048a",
+      "observed": "57835653b068bd872e5a2e29aea9fef48a1726fe3c0fac336e2c6ea98bb6048a",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_assembly_report.txt",
+      "expected": "12ce7833ce4d38b8ad49256e5fbe8eec6b6d4f870ec39ae698f9d74bcb750e19",
+      "observed": "12ce7833ce4d38b8ad49256e5fbe8eec6b6d4f870ec39ae698f9d74bcb750e19",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_assembly_stats.txt",
+      "expected": "d49c12b6782f6d498df171b705dd3a19a77a951c797cc8c8a1507a7ea334e9d3",
+      "observed": "d49c12b6782f6d498df171b705dd3a19a77a951c797cc8c8a1507a7ea334e9d3",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_cds_from_genomic.fna.gz",
+      "expected": "1c1230071139410faf6b5fce6d5d7ef2f7919ebebd0da45176d3cc8539a5bf45",
+      "observed": "1c1230071139410faf6b5fce6d5d7ef2f7919ebebd0da45176d3cc8539a5bf45",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_fcs_report.txt",
+      "expected": "252383a19cb2536b0b5cd69e7f83b14db82193f9577e071c0f5d9b7f9bc88109",
+      "observed": "252383a19cb2536b0b5cd69e7f83b14db82193f9577e071c0f5d9b7f9bc88109",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_feature_count.txt",
+      "expected": "8bf63dd9100b8e6ccd6ad4184435cfae6dd5b378df8adc4bbbb3975070ba6b38",
+      "observed": "8bf63dd9100b8e6ccd6ad4184435cfae6dd5b378df8adc4bbbb3975070ba6b38",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_feature_table.txt.gz",
+      "expected": "77362452c26e6214e51227f2806d6e181d97f50b11e0534e9e59f8ddd4eba4b3",
+      "observed": "77362452c26e6214e51227f2806d6e181d97f50b11e0534e9e59f8ddd4eba4b3",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_genomic.fna.gz",
+      "expected": "a182f3c71662973dc636cacd7722588c9bbe3c8ea6ce62b1bae7dac940545d47",
+      "observed": "a182f3c71662973dc636cacd7722588c9bbe3c8ea6ce62b1bae7dac940545d47",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_genomic_gaps.txt.gz",
+      "expected": "a1e240b139918c0a0e44f11888c4fe2c2060e81180ec4140f03566f0f4024146",
+      "observed": "a1e240b139918c0a0e44f11888c4fe2c2060e81180ec4140f03566f0f4024146",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_genomic.gbff.gz",
+      "expected": "56b1a02e6406bf9cbc19bf74049c66699564eaad77dae7a3a42a37d2ebe2c507",
+      "observed": "56b1a02e6406bf9cbc19bf74049c66699564eaad77dae7a3a42a37d2ebe2c507",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_genomic.gff.gz",
+      "expected": "d6a3aa3c00df97cf0a458608572fbe721424a4740e64e9ddef9398c4eef7db5f",
+      "observed": "d6a3aa3c00df97cf0a458608572fbe721424a4740e64e9ddef9398c4eef7db5f",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_genomic.gtf.gz",
+      "expected": "f7e4b4a6c61a57aa795d6a9a17dca13edb98637867b0d5cc5e2fa832c9fb3189",
+      "observed": "f7e4b4a6c61a57aa795d6a9a17dca13edb98637867b0d5cc5e2fa832c9fb3189",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_protein.faa.gz",
+      "expected": "33bbaace22bf13def4ac28591d4d4954f981a65b567425da47b4f59284ed79ff",
+      "observed": "33bbaace22bf13def4ac28591d4d4954f981a65b567425da47b4f59284ed79ff",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_protein.gpff.gz",
+      "expected": "6887c192605e2dfd2ecae200bb837861af16b7ec325cb733a257f643032b7172",
+      "observed": "6887c192605e2dfd2ecae200bb837861af16b7ec325cb733a257f643032b7172",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_rna.fna.gz",
+      "expected": "080365110349b1f2110ca4813e3b67e64233035728af831c063897851e60ffea",
+      "observed": "080365110349b1f2110ca4813e3b67e64233035728af831c063897851e60ffea",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_rna_from_genomic.fna.gz",
+      "expected": "f9ee41dcc13a369c4c6a9f3515ec3615b2e4be09592ac765d748188cd9f12c3a",
+      "observed": "f9ee41dcc13a369c4c6a9f3515ec3615b2e4be09592ac765d748188cd9f12c3a",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_rna.gbff.gz",
+      "expected": "6248645c1f345da0b0b4a7a4bc69d5b7e79a6c837e9412bd6fdc373ab48939dd",
+      "observed": "6248645c1f345da0b0b4a7a4bc69d5b7e79a6c837e9412bd6fdc373ab48939dd",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_translated_cds.faa.gz",
+      "expected": "23e4089c972035c51817b7475069da3c6ac112cd8c0321704237c538e267ce64",
+      "observed": "23e4089c972035c51817b7475069da3c6ac112cd8c0321704237c538e267ce64",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/reference/TAIR10.1_genomic.fna",
+      "expected": "de99316d1d5597e9a5d40d943ff919c17d59b77116354a5d388b183b6f21075f",
+      "observed": "de99316d1d5597e9a5d40d943ff919c17d59b77116354a5d388b183b6f21075f",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/data/raw_public/plantregmap_tair10/Ath_PhyloP.bedGraph.gz",
+      "expected": "8944714faaf8942cecdfe4a7b496a4d0948531dff8a8f721c390d53a775cbab7",
+      "observed": "8944714faaf8942cecdfe4a7b496a4d0948531dff8a8f721c390d53a775cbab7",
+      "passed": true
+    },
+    {
+      "path": "PROJECT_ROOT/runs/v0.3/annotation/tair10_context_20260919T213842Z/popgenlm_v03_master_10000_annotated.tsv",
+      "expected": "428f6948180f6aa95366d931a49b1a86ccfb7ea98663875271af8bbb2f9e8b47",
+      "observed": "428f6948180f6aa95366d931a49b1a86ccfb7ea98663875271af8bbb2f9e8b47",
+      "passed": true
+    }
+  ],
+  "fixture_resolution": {
+    "path": "PROJECT_ROOT/repo/data/fixtures/1001g_v3.1_population_gpn_fixture.tsv",
+    "release_sha256": "bd7d909b50c148ad0d95b305c6f56cfcb3289f095bd86f3b83dba123d51f8d9b",
+    "current_sha256": "bd7d909b50c148ad0d95b305c6f56cfcb3289f095bd86f3b83dba123d51f8d9b",
+    "historical_g3b_sha256": "bd7d909b50c148ad0d95b305c6f56cfcb3289f095bd86f3b83bda123d51f8d9b",
+    "used": "exact v0.3.0 fixture; historical G3B JSON contains a mistyped digest",
+    "release_matches_current": true
+  },
+  "chromosome_alias_checks": {
+    "1": {
+      "alias": "NC_003070.9",
+      "length": 30427671,
+      "indexed_first_pos": 55
+    },
+    "2": {
+      "alias": "NC_003071.7",
+      "length": 19698289,
+      "indexed_first_pos": 1003
+    },
+    "3": {
+      "alias": "NC_003074.8",
+      "length": 23459830,
+      "indexed_first_pos": 103
+    },
+    "4": {
+      "alias": "NC_003075.7",
+      "length": 18585056,
+      "indexed_first_pos": 1005
+    },
+    "5": {
+      "alias": "NC_003076.8",
+      "length": 26975502,
+      "indexed_first_pos": 53
+    }
+  },
+  "samples": 1135,
+  "python": "3.10.19",
+  "job_id": "7609268"
+}

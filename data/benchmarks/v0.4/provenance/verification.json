@@ -1,0 +1,154 @@
+{
+  "status": "PASS",
+  "execution": "Eight notebooks completed in fresh local CPU kernels from temporary archive extraction with credentials and PYTHONPATH removed. Existing CPU environment; no clean install or hosted Google Colab execution claimed.",
+  "python": "3.10.19 | packaged by conda-forge | (main, Oct 22 2025, 22:29:10) [GCC 14.3.0]",
+  "executable": "/projects/ag-demeaux/tali/tools/gpn_env/bin/python",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.15.2",
+    "matplotlib": "3.10.7",
+    "nbclient": "0.10.4",
+    "nbformat": "5.10.4"
+  },
+  "notebooks": [
+    {
+      "name": "popgenlm-v04-alphagenome.executed.ipynb",
+      "status": "PASS",
+      "sha256": "2aef39292f0deb171a4e7020e8d8d8ac1f37527a34d4ef61a6d511caaae43e89",
+      "executed_code_cells": 3,
+      "rendered_images": 2
+    },
+    {
+      "name": "popgenlm-v04-botanic.executed.ipynb",
+      "status": "PASS",
+      "sha256": "5e5f185a9c3f18656c3b92d440619b26f073ba749f6b79dad594388f1d259919",
+      "executed_code_cells": 3,
+      "rendered_images": 1
+    },
+    {
+      "name": "popgenlm-v04-gpn.executed.ipynb",
+      "status": "PASS",
+      "sha256": "d3ef5f7d37787cd6ae1370beaee0209c542bf6c36079936475dee76894e70794",
+      "executed_code_cells": 2,
+      "rendered_images": 1
+    },
+    {
+      "name": "popgenlm-v04-nemo.executed.ipynb",
+      "status": "PASS",
+      "sha256": "76fcbeac9b791aaf8afe3199aa7d17f97de849bbc529702c4bf0cdc02c6b4580",
+      "executed_code_cells": 3,
+      "rendered_images": 1
+    },
+    {
+      "name": "popgenlm-v04-overview.executed.ipynb",
+      "status": "PASS",
+      "sha256": "ed452f1d711fa0628a497bb4a03f3e50e8ee9e488bdf9a8b02d947baf078598b",
+      "executed_code_cells": 3,
+      "rendered_images": 3
+    },
+    {
+      "name": "popgenlm-v04-phylop.executed.ipynb",
+      "status": "PASS",
+      "sha256": "d368fd0c4ccc6bac1373015f9e9d784c5120b7f64f7a0eb50d28636d0d6a7f0c",
+      "executed_code_cells": 2,
+      "rendered_images": 1
+    },
+    {
+      "name": "popgenlm-v04-plantcad.executed.ipynb",
+      "status": "PASS",
+      "sha256": "4e5b103f2f9ba50c89cd271e9d3b6f8d5e04cede29f285e561dc370595ce4864",
+      "executed_code_cells": 2,
+      "rendered_images": 1
+    },
+    {
+      "name": "popgenlm-v04-plantcad2.executed.ipynb",
+      "status": "PASS",
+      "sha256": "5f3a4f47869ee409cd429ab69cfc92bf6fd0ca87e49cbac5a84e73819e90409a",
+      "executed_code_cells": 3,
+      "rendered_images": 1
+    }
+  ],
+  "input_files_verified": 32,
+  "archive_sha256": "4401406a9705e09f9b520a9f878096264afec911a8a2d099a85faf76dfca776a",
+  "rank_rows_independently_reconstructed": 33100,
+  "eligible_locus_method_rows_reconstructed": 932,
+  "counts_sha256": "24f99c6c77b1fb2c0667c515e1e8ec6bb0e3720ad3fa86698c0ea901c64a1741",
+  "all_eight_notebook_count_exports_byte_identical": true,
+  "original_bundle_hashes_passed": 253,
+  "negative_checks": [
+    "changed input bytes rejected",
+    "changed raw score rejected"
+  ],
+  "current_source_and_archived_implementation_counts_identical": true,
+  "figures": {
+    "AT1G01690_shortlist_changes.tsv": "f1635019aa1c40e0aea40721a72272cb7ff042e41a201a89e312e4b0eaa98221",
+    "AT4G02405_shortlist_changes.tsv": "7bb832253e7ce4c77b2559a9a04a6c63307556a8cdc13d7bff3dd0b6b710ab7f",
+    "alphagenome.png": "b945d36a3b281831b3793caecc26d901fb78004de5af685c30f62ec01337ea72",
+    "alphagenome.svg": "c6288701a302cc8b1447853baa30697425ade59446ba5dbe87ff6d7b4c20db73",
+    "benchmark.png": "48afb6882b0b6e1572bfc9961caa63683e5b7082b6b7a4f48f36046323d21b01",
+    "benchmark.svg": "b97a23ea9cb5ecd1dfe7dd22212527f67df570734cec3961c6b4ef3d6d8f5909",
+    "botanic.png": "be99898c22c902c6e9441cc1c6ee36b9cc0ef78142e449989fee0342f0689a5a",
+    "botanic.svg": "f0ce7362905641dab3cc9043d97848a3241c5618fc251e5715745cb4b0126379",
+    "gpn.png": "ba0447f059b3ed640a5b0346469501cbc110fd93f358d15e27bcf40451f1f341",
+    "gpn.svg": "41016f714f392ca33283ce58cf230be904e4882e53181ebd88be3f48bca44963",
+    "locus_AT1G01690.png": "830a15e345d83a1e0a56a5108e0811666495b4f8eab7678012387bb0f21629d5",
+    "locus_AT1G01690.svg": "b766e16409cf10dd48a24b3a3ebb7f34fa64e13f957f4890657372c1e8ae06d9",
+    "locus_AT4G02405.png": "4da4e80889ebbe296843e35a596aab5e3d5d9a0fa926ecf921981329314914e0",
+    "locus_AT4G02405.svg": "6db7cab87bb5a44605977c4e2ea46bf586418e5e8ed7946f39d427453bb80e76",
+    "nemo.png": "ca5ca45977369e3248be55a599866926239e3da793ef90fc851ac52e34571c80",
+    "nemo.svg": "00576ead253f17403f22b5a46015ea442ff22d3510c310bee56e8e97e83f7c77",
+    "observed_arabidopsis.png": "712e4331ff8d56eb8fbfa930bf540f7df63f30209f047dfdbb267ba62d8434f8",
+    "observed_arabidopsis.svg": "5061548b22b44b61b32cb17309ab6ec28c4ef1790d31018410674258cc432eba",
+    "phylop.png": "c720118776f7aaa0e2def5aa774579292db114298bdb602c35f96f2570851a42",
+    "phylop.svg": "3290212834c8c0d9bb958c299ed17af60f3ee0b8f7c4427f5a5dd2d5c553c608",
+    "plantcad.png": "8e215c2f33e7d14ffaeb40b95840c1e399397a7ea3206fb39dbf2696038b1f8f",
+    "plantcad.svg": "0e0d4f129bc9e329c94a790f5c2c5368e55d45ab207ab0bf2a76112df36a133f",
+    "plantcad2.png": "e7b827315e250e0cb0fa89d1cec0fa5cd1a1d27f789df6d13e50248c2ab5e334",
+    "plantcad2.svg": "836c5497983bcb21944ff8bff079f634c5b29aacd9a92903a711e756d3382c62",
+    "verified_counts.tsv": "24f99c6c77b1fb2c0667c515e1e8ec6bb0e3720ad3fa86698c0ea901c64a1741"
+  },
+  "source_files": {
+    "review/v0.4/build_review.py": "90c3fca6a9cadf141e7c6b8fbc523d6c9367ffac7a871d9e3458c6742ff552d4",
+    "review/v0.4/finalize_review.py": "629b0a796ad37a5353ca0bcf9e687b54f6479e2b6d55de4f947210b881d4b0be",
+    "review/v0.4/make_notebooks.py": "1adc0b3d076238dd27d7083d780d84b3c54c2b0d26bd92cccf8e0fe67f029287",
+    "review/v0.4/review.py": "79c3a5f441cc3098d65110766a0db6a0d76348e0d7abef459dd441b19d0fa9cf",
+    "review/v0.4/verify_review.py": "35eb276c91a1a8c9cbcefaf56f11b321384ea7720daaba58f6192c09ffd508b3"
+  },
+  "slurm": {
+    "submitted": false,
+    "job_id": null
+  },
+  "resolved_verification_errors": [
+    {
+      "command": "python review/v0.4/verify_review.py --worktree worktrees/v0.4-regulatory-pilot --package reports/v0.4/review_20261115",
+      "error": "AssertionError: No immutable hashes checked",
+      "cause": "All eight notebooks passed; final preservation harness expected object-valued hashes, original manifest uses string hashes.",
+      "resolution": "Corrected manifest reader; this finalizer independently checks every original digest without repeating notebooks."
+    },
+    {
+      "command": "python -m pytest -q tests/v0_4/test_regulatory.py tests/v0_4/test_regulatory_transfer.py tests/v0_4/test_followup.py",
+      "error": "ModuleNotFoundError: No module named 'popgenlm.regulatory' (also regulatory_transfer)",
+      "cause": "Existing installed release shadowed review worktree.",
+      "resolution": "Rerun with PYTHONPATH=src; no installation or environment modification."
+    }
+  ],
+  "blocked": [
+    "separate Botanic v3 Fig4b/4d ATAC reproduction",
+    "native A. thaliana nemo Fig3a validation",
+    "independent causal-SNP endpoint (zero eligible loci)",
+    "unrestricted public model-output redistribution",
+    "hosted Google Colab execution and clean dependency installation"
+  ],
+  "fast_cpu_tests": {
+    "command": "PYTHONPATH=src /projects/ag-demeaux/tali/tools/conda_envs/popgenlm_release_py311/bin/python -m pytest -q tests/v0_4/test_regulatory.py tests/v0_4/test_regulatory_transfer.py tests/v0_4/test_followup.py",
+    "result": "10 passed in 6.55s"
+  },
+  "review_lint": "Ruff check and format --check pass",
+  "visual_review": [
+    "benchmark",
+    "locus_AT1G01690",
+    "alphagenome",
+    "nemo"
+  ]
+}

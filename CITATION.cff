@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite this software and the model/dataset references in docs/v0.4_references.md."
+title: "PopGenLM Bench: Regulatory Variant Prioritization Pilot"
+version: 0.4.0
+date-released: 2026-11-15
+authors:
+  - family-names: Ali
+    given-names: Tahir
+repository-code: "https://github.com/tahirali-biomics/popgenlm-bench"
+url: "https://tahirali-biomics.github.io/popgenlm.html"
+license: Apache-2.0

@@ -1,0 +1,48 @@
+{
+  "created_unix": 1794688785.0941567,
+  "job_id": "7609387",
+  "files": {
+    "accession_crosswalk.tsv": {
+      "sha256": "9f91189a9ff6e56a7c0b69cf2825eed146890eba5ec40437d38480026ee40ce1",
+      "bytes": 32456
+    },
+    "alphagenome_subset.tsv": {
+      "sha256": "0a219b7a8313e9ae16ddb12f2204b47a9287e137433b2213339b0e15e8fb08d1",
+      "bytes": 59104
+    },
+    "candidate_dosages.npz": {
+      "sha256": "08dc4c847af0a1b3189ed142f387004307bd74281732f9fa2f4238b8be3cc17e",
+      "bytes": 221919
+    },
+    "candidates.tsv": {
+      "sha256": "b4318ae403e413242a76f5807b0c9d7662ed0ec4e94623146e5d60b6793fe4eb",
+      "bytes": 365765
+    },
+    "kinship.json": {
+      "sha256": "c8f97b999fa70bc00c8c1f5f40a36f0cb1df43a9712c00affe6a807a47d85060",
+      "bytes": 339
+    },
+    "loci.tsv": {
+      "sha256": "79708f8782c9e25d8a602272ce3630edcb67e5b61433a4fda8185f664c821314",
+      "bytes": 6923
+    },
+    "mapping_samples.tsv": {
+      "sha256": "129e6bbeac21177284e4053658cf40606be87e772c9612f9698d1629402226db",
+      "bytes": 9598
+    },
+    "protocol.json": {
+      "sha256": "cabca974a55f77956030bc78ea8761467cda5afc1c66334ee5359a514f7cca65",
+      "bytes": 1948
+    },
+    "screen_exclusions.tsv": {
+      "sha256": "aa2585845c2e8f9ea225293e6527a4a538f55b0d0487e6ff853d87823efb1d18",
+      "bytes": 9803
+    },
+    "screen_inventory.tsv": {
+      "sha256": "185a00c1e85de31b7406209dca36c4ce8616b39e0798debce79a68efd780a84d",
+      "bytes": 40548
+    }
+  },
+  "model_scores_inspected": false,
+  "primary_nucleotide_loci": 0
+}

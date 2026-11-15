@@ -1,0 +1,11 @@
+{
+  "revision": "30a4efab14c82f6e5ca621342cfafc5a9d078e08",
+  "files": {
+    "scripts/v0.4/score_botanic.py": "ae94b4f82db9435ececb7189480cd50fb67fad6e8b654a0b9453d9267b5d04e5",
+    "scripts/v0.4/score_alphagenome.py": "98eddda40d78d4e3dfb2dbebfe5c622744c4316f6e36fdb486086437afc2c97e",
+    "scripts/v0.4/integrate_models.py": "a58842cc476fd9cf699e8d7f68a8aa9206b4f4a7fb90cf0a11908c4c21b5a5d1",
+    "scripts/v0.4/verify_model_extension.py": "17e815cc225194fa2db1593451ac1a40e54d1e7f688101f40f4633092459f282",
+    "scripts/v0.4/package_model_extension.py": "3d13238a052f146cb7838c22fe446cb4dd209c9cf1cf0769b56a538b3308b0f4",
+    "src/popgenlm/regulatory_transfer.py": "1e0f346b653b9e191d0e20f20156f09504b5a234eff0ff386d850526c1217d8c"
+  }
+}

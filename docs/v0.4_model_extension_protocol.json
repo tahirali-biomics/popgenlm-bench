@@ -1,0 +1,33 @@
+{
+  "botanic_revision": "813d2d46ca40ab5cd91a6acaa8852d636224992e",
+  "contexts_bp": [
+    512,
+    4096
+  ],
+  "llr": "single focal masked logP(ALT)-logP(REF), mean forward and reverse-complement scores; explicit CLS offset, no pad or truncation; raw strand scores preserved",
+  "comparison": "same genomic bases/positions as PlantCAD2; Botanic model-specific CLS token added",
+  "rules": {
+    "botanic_abs": "0.8 conventional annotation baseline + 0.2 within-locus percentile(abs(raw LLR)) at each context",
+    "botanic_signed_512": "exploratory: 0.8 same baseline + 0.2 within-locus percentile(signed raw REF-to-ALT LLR), fixed before Botanic score inspection",
+    "alpha": "0.8 same baseline + 0.2 within-locus percentile(alpha magnitude)"
+  },
+  "alpha_subset": [
+    "AT4G33940",
+    "AT3G23110",
+    "AT2G22240",
+    "AT4G14840",
+    "AT3G53880"
+  ],
+  "alpha_sequence_bp": 131072,
+  "alpha_output": "HOMO_SAPIENS RNA_SEQ, all tracks (ontology_terms=None)",
+  "alpha_aggregation": "mean(abs(log1p(ALT)-log1p(REF))) across output bins overlapping central 2048 genomic bases and all fixed RNA_SEQ tracks; exact bin boundaries required; forward genomic sequence; identical flanks",
+  "alpha_model_api": "alphagenome.models.v1",
+  "alpha_model_version": "ALL_FOLDS",
+  "alpha_sdk_version": "0.11.0",
+  "alpha_smoke": "public TAIR10 sequence around first separate fixture, no pilot SNPs",
+  "endpoint": "same frozen held-out association lead, p<.05/full-locus candidate count; target and threshold do not change with coverage",
+  "bootstrap": "2000 draws whole chromosomes, seed20261114; descriptive only",
+  "weights_fit": false,
+  "primary_nucleotide_endpoint": "unestimable, zero eligible loci",
+  "score_inspection_at_freeze": false
+}

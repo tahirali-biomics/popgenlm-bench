@@ -11,7 +11,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(SCRIPT_DIR))
 ROOT = SCRIPT_DIR.parent
 sys.path.insert(0, str(ROOT / "src"))
-from popgenlm.plantcad import reverse_complement
+from popgenlm.plantcad import reverse_complement  # noqa: E402 -- preserve audited production execution/order
 
 ATOL = 1e-4
 RTOL = 1e-4
@@ -126,7 +126,7 @@ def main():
     rows = []
     fails = []
     for i, v in enumerate(variants):
-        raw = lambda p, ref=v["ref"], alt=v["alt"]: p["ACGT".index(alt)] - p["ACGT".index(ref)]
+        raw = lambda p, ref=v["ref"], alt=v["alt"]: p["ACGT".index(alt)] - p["ACGT".index(ref)]  # noqa: E731 -- preserve audited production execution/order
         a, b, r = raw(p1[i]), raw(p8[i]), float(ref[i])
         rr = prc[i]["ACGT".index(rcvars[i]["alt"])] - prc[i]["ACGT".index(rcvars[i]["ref"])]
         vals = [a, b, r, rr]

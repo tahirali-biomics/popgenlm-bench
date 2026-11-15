@@ -1,0 +1,13 @@
+{
+  "botanic_terms": "models/botanic1/813d2d46ca40ab5cd91a6acaa8852d636224992e/LICENSE",
+  "botanic_sections": [
+    "2(c) research output publication with attribution",
+    "3(a/b/c) attribution/citation/research restrictions",
+    "3(d) broad non-transferability; resolve before public release"
+  ],
+  "alpha_terms_source": "https://www.alphagenomedocs.com/faqs.html",
+  "alpha_terms_status": 200,
+  "alpha_terms_summary": "direct API outputs noncommercial; no model training; consult linked Terms before redistribution",
+  "bundle": "restricted local RAMSES research review, not public",
+  "weights_packaged": false
+}

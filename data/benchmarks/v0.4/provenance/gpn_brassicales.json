@@ -1,0 +1,38 @@
+{
+  "model": "gpn_brassicales",
+  "checkpoint": "PROJECT_ROOT/models/gpn/eb9c35d0d18571abe84390d22e74f2b21d319ce3",
+  "weights": {
+    "model.safetensors": "713ef126033cef9b1884254aecc5f7bba2083abd23ef6c9dcc049d2eb4414f8d",
+    "config.json": "8859bb15c41e426892424bf964b2808328757aa3142311032b5ddcaf7209488e",
+    ".gitattributes": "db7c0371f46f0840b8f25794c1e3321c9b5820a8cb6ba9694a46fc64b8fae5a6",
+    "tokenizer_config.json": "6a152da73a408e88903f209f012d7ebaa563f0c73d0a22f860e21a9b0ea75c5e",
+    "special_tokens_map.json": "c663fbbb1b9f2397f0c478bb62b522ec9dcc6756826f4d08e0443e774a12127c",
+    "README.md": "16bca530d2a972d94b599f1f28a9c9275eff4019d9632bf89dcf4d6f04f10c56",
+    "tokenizer.json": "4d9745bec1f323aa95b840eb3d8de4cb49eb161bce9fb0d6c401f8a156be43f7"
+  },
+  "versions": {
+    "torch": "2.5.1+cu124",
+    "transformers": "4.49.0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "mamba-ssm": "2.2.4",
+    "causal-conv1d": "1.5.0.post8"
+  },
+  "python": "PROJECT_ROOT/environments/v0.4/gpn_compatible/bin/python",
+  "platform": "Linux-5.14.0-570.150.1.el9_6.x86_64-x86_64-with-glibc2.34",
+  "job_id": "7609518",
+  "runs": [
+    {
+      "sha256": "5ca7b382c8b26e5e77a8c5574dd4a091ee79e87a4c1839f63f0b66368a91b7a2",
+      "rows": 209,
+      "elapsed_seconds": 4.393835783004761,
+      "job_id": "7609518",
+      "peak_cuda_bytes": 357958144,
+      "checkpoint": "PROJECT_ROOT/models/gpn/eb9c35d0d18571abe84390d22e74f2b21d319ce3",
+      "context_bp": 512,
+      "model": "gpn_brassicales",
+      "smoke": false
+    }
+  ],
+  "orientation": "masked ALT-minus-REF logits; forward and RC averaged; magnitude for ranking"
+}

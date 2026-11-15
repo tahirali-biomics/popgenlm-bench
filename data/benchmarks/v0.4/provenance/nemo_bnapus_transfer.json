@@ -1,0 +1,13 @@
+{
+  "model": "nemo Bnapus v1.0 transfer",
+  "source_revision": "c8deaaf18a8bd174300bf40e11fa2c69c0d6bb4e",
+  "weights_sha256": "85bec6231833d41a432e7be99e6cf3a109ac275453017062a64d990fbaad374c",
+  "architecture_sha256": "797b1246f368cfab2abb3516382bb9e5a6e0916332f442408c80048719fa4180",
+  "tensorflow": "2.21.0",
+  "python": "PROJECT_ROOT/environments/v0.4/nemo/bin/python",
+  "job_id": "7609446",
+  "elapsed_seconds": 45.820414781570435,
+  "windows": "6200bp promoter -5000/+1200; terminator -1200/+5000; transcript strand; longest mRNA; all CDS masked",
+  "score": "ALT-minus-REF log10(TPM+0.1), unrounded; magnitude for prioritization",
+  "training_overlap": "Bnapus cross-species transfer; homolog overlap unresolved; no family-heldout claim"
+}

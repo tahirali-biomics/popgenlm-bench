@@ -1,0 +1,145 @@
+{
+  "schema": 1,
+  "release": "v0.4.0",
+  "source_revision": "v0.4.0",
+  "status": "Public research reproduction; code Apache-2.0, data retain upstream terms; Botanic raw score columns excluded",
+  "raw_reconstruction": "All available non-Botanic score ranks reconstructed. Botanic outcomes checked from published rank records, not rerun from withheld raw scores.",
+  "files": {
+    "DATA_TERMS.md": {
+      "sha256": "df514f4ff374c5d4006a583c18e1a74a281f298cbe474baf75c32ab95c310a41",
+      "bytes": 6669
+    },
+    "data/alpha_display.tsv": {
+      "sha256": "31d5fddf26163f5509ef9321a22fa587af2df7993c2bb82dc34ecc9d1edbec22",
+      "bytes": 242
+    },
+    "data/alpha_tracks.tsv": {
+      "sha256": "84a32662ea09a804b3f5f1de75771ff3e9abd715e6e18e7de6ba801ddbaf6cb4",
+      "bytes": 68025
+    },
+    "data/alphagenome_track_catalog.tsv": {
+      "sha256": "28013fa7e5e0d6262d3febc66b79832c8a19cccd72cc2c73d52b407bfaf1bd58",
+      "bytes": 92994
+    },
+    "data/candidates.tsv": {
+      "sha256": "b4318ae403e413242a76f5807b0c9d7662ed0ec4e94623146e5d60b6793fe4eb",
+      "bytes": 365765
+    },
+    "data/coverage.tsv": {
+      "sha256": "5fba484f94cdd85a4172995b2c43802d3ffe11e283a1f1f193822861298e0d51",
+      "bytes": 381
+    },
+    "data/direct_comparisons.tsv": {
+      "sha256": "0f81bab1aa10f3b23eb0e49b0bff98fd336162bd2728b2d19d3c8653dd4b8b81",
+      "bytes": 962
+    },
+    "data/frozen_scores.tsv": {
+      "sha256": "590e8ff794e97e7cd6e5c5fcd8a286ad5d9d8110fad17d756ae3f34bc0e3db21",
+      "bytes": 138055
+    },
+    "data/gene_features.tsv": {
+      "sha256": "d71de1bcc2b3d004943f2f20bfc12c9b6fad4b7e9cbe1fcf3670d5ce5becb51f",
+      "bytes": 37610
+    },
+    "data/legacy_v03.tsv": {
+      "sha256": "8141be2861950dda8b909dced47f7dd08bdff9782f7436872d4aa0d32ed9386a",
+      "bytes": 472388
+    },
+    "data/loci.tsv": {
+      "sha256": "79708f8782c9e25d8a602272ce3630edcb67e5b61433a4fda8185f664c821314",
+      "bytes": 6923
+    },
+    "data/nemo_positions.tsv": {
+      "sha256": "6ead5ea44eca7afc4ed33e9eeef4480c6ad3131adb383bb05f0fd2c889777197",
+      "bytes": 32271
+    },
+    "data/observed_expression.tsv": {
+      "sha256": "fb7bf08634777b37bf982a27527396713abbb906c176430a1cfa06c7b393efe1",
+      "bytes": 27951
+    },
+    "data/paired_metrics.tsv": {
+      "sha256": "eab1526ba24bd0c39a3fd01424bedba1f9810204c422c0877289ed71d567dd9d",
+      "bytes": 21639
+    },
+    "data/per_locus_outcomes.tsv": {
+      "sha256": "c5e8107eb1fc7c2c2463a7b1acf57f6198ebb67d693cd117c111b9489a0de608",
+      "bytes": 92446
+    },
+    "data/rankings.tsv": {
+      "sha256": "14c626e9059aac2a8c346a9c5760b49e05911c3d3ad6a83e3712b829ecd99c15",
+      "bytes": 2563982
+    },
+    "data/score_concordance.tsv": {
+      "sha256": "1b7ba57c1b6d883bf08c2ff49fd203de29336f3d825ea738fd31178748b851f5",
+      "bytes": 2959
+    },
+    "frozen_regulatory.py": {
+      "sha256": "c00cf5eb1d2b492fffa9ac96951c8db8ef555f46d65eae4c11ffbff8549f8a32",
+      "bytes": 5257
+    },
+    "licenses/Botanic1-LICENSE": {
+      "sha256": "9276bb71478fc018d9da80ea7345cb882816c37fe027d7d84f1f5a199c60048f",
+      "bytes": 14456
+    },
+    "provenance/gpn_brassicales.json": {
+      "sha256": "aaf7fa85803fc0b7a2396f6be1d6d6df97d09308da5df516778573db8e423540",
+      "bytes": 1636
+    },
+    "provenance/model_jobs.tsv": {
+      "sha256": "b761d7399214e8e15ead9e6e27a6cb26cf56b28c250e3cf1e2eb8494d94506df",
+      "bytes": 2169
+    },
+    "provenance/model_protocol.json": {
+      "sha256": "ea32d320311403a4d25c78d9925d0828bf2659d89e584321246121c26194cd6d",
+      "bytes": 1743
+    },
+    "provenance/model_source.json": {
+      "sha256": "671f4d94fd4d4ba86de82b27ec30df04766e4fe1ec605116b7bdd8b2c7b5cafb",
+      "bytes": 739
+    },
+    "provenance/nemo_bnapus_transfer.json": {
+      "sha256": "fde20b98d5224801cbb27d96f664297eb0fe6e80b6b6caf9f0ae3d5900e885f7",
+      "bytes": 750
+    },
+    "provenance/pilot_input_verification.json": {
+      "sha256": "1e2c2bec21e73ac170ca2999ef19d240b1e92943ccb4c7368f45b40d6e8f1b9d",
+      "bytes": 10515
+    },
+    "provenance/pilot_jobs.tsv": {
+      "sha256": "1acafcf9f08bbaafa3cca8cbfd42567c028753864b07fd400156580209209a36",
+      "bytes": 2582
+    },
+    "provenance/plantcad2_s.json": {
+      "sha256": "94f3693cd3307fb1695d92cc58162493528d521e6befe67d0bbf127c39035f12",
+      "bytes": 2321
+    },
+    "provenance/plantcad_v1.json": {
+      "sha256": "c51ee6beb42597fa0a4f14b67f87a2f51301eff83089a921e56dae26e1c972df",
+      "bytes": 2057
+    },
+    "provenance/redistribution_review.json": {
+      "sha256": "968ba16b0d378af6e3e4fc2dadf6c6c2b13d0460b7df93bbc0144966d1cdf84f",
+      "bytes": 620
+    },
+    "requirements-cpu.txt": {
+      "sha256": "053513f9a71535e04e6fa788e032613b8b2fa3537d23ba4b416cc849e0fde1d2",
+      "bytes": 216
+    },
+    "restricted_inputs.json": {
+      "sha256": "ded6cf0c095670f5c2a633946048b7eeabbfceb4eef187a9f3ff0b547bcb4cf2",
+      "bytes": 883
+    },
+    "review.py": {
+      "sha256": "bd1f9dc78179017513cc5f0ce8b773da584c83b0c0629841446dafae95010703",
+      "bytes": 23099
+    },
+    "source_figures/botanic.png": {
+      "sha256": "be99898c22c902c6e9441cc1c6ee36b9cc0ef78142e449989fee0342f0689a5a",
+      "bytes": 140332
+    },
+    "source_figures/botanic.svg": {
+      "sha256": "f0ce7362905641dab3cc9043d97848a3241c5618fc251e5715745cb4b0126379",
+      "bytes": 248654
+    }
+  }
+}
