@@ -176,7 +176,7 @@ seeds = [s for s in seeds if s in genes and s in expression.index]
 # These are published tested phenotypes, not a list of published significant eQTLs.
 # Recompute association; do not claim reproduction of their GEMMA batch analysis.
 assays = pd.read_csv(RUN / "inputs/assay_nucleotide_inventory.tsv", sep="\t")
-positive = assays[assays.independent_nucleotide_support == True]
+positive = assays[assays.independent_nucleotide_support == True]  # noqa: E712 -- preserve audited production execution/order
 support = set(zip(positive.gene, positive.variant_id))
 ordered = []
 for c in ALIASES:

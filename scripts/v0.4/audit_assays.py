@@ -55,7 +55,7 @@ genes = {}
 with gzip.open(
     root / "data/incoming/GCF_000001735.4_TAIR10.1/GCF_000001735.4_TAIR10.1_genomic.gff.gz", "rt"
 ) as f:
-    for l in f:
+    for l in f:  # noqa: E741 -- preserve audited production execution/order
         if "\tgene\t" not in l:
             continue
         a = l.rstrip().split("\t")

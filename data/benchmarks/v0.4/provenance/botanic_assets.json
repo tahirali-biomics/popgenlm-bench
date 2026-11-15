@@ -1,0 +1,46 @@
+{
+  "revision": "813d2d46ca40ab5cd91a6acaa8852d636224992e",
+  "path": "/projects/ag-demeaux/tali/PopGenLM/models/botanic1/813d2d46ca40ab5cd91a6acaa8852d636224992e",
+  "assets": {
+    "LICENSE": {
+      "bytes": 14456,
+      "sha256": "9276bb71478fc018d9da80ea7345cb882816c37fe027d7d84f1f5a199c60048f"
+    },
+    "README.md": {
+      "bytes": 14267,
+      "sha256": "33f834e21eca5c66c68e6f4c3a66d91b046767e780a777db9bbfe8ebd5b4c29a"
+    },
+    "botanic1_architecture.py": {
+      "bytes": 35820,
+      "sha256": "0acf61fdbd8034c8928487bc7fdcdeb4fbf98b764f5aa445ffc50538ed7dd3bb"
+    },
+    "botanic1_tokenizer.py": {
+      "bytes": 6857,
+      "sha256": "5fd43ab49daa675825ac4a6d30dc897d4a1833bc95b41d4e965be8a7bf597714"
+    },
+    "config.json": {
+      "bytes": 796,
+      "sha256": "e690d7f1eb4ea4547e2fd147a45c7184714e0fd8304fdb45fd5169d04d90b340"
+    },
+    "model.safetensors": {
+      "bytes": 1271626964,
+      "sha256": "adc727608a2bce67b054d1c8784b9bf2eacf9ac6e6c6a2361968431af53a0991"
+    },
+    "special_tokens_map.json": {
+      "bytes": 149,
+      "sha256": "4f98fb3de0902c87821f2e518a9f808ea1ffe3810882e4d429758a55dfbff009"
+    },
+    "tokenizer_config.json": {
+      "bytes": 1557,
+      "sha256": "81a7ba9205f9aced64b643403c6698a4f6d335211a0975cd2ade4a6f96c2f903"
+    },
+    "vocab.json": {
+      "bytes": 138,
+      "sha256": "91c5de136bc77f6a36687f113138fc2eb2fb8a7231f7ce0ea872703023314c6a"
+    },
+    "zero_shot_llr.py": {
+      "bytes": 3935,
+      "sha256": "c8da78d6e50c8d659955a26b6fa7956bb3df56c2b3ae70659b04219f71e3a60e"
+    }
+  }
+}

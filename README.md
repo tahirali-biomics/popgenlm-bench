@@ -13,6 +13,17 @@ The project asks a simple but important question:
 
 PopGenLM Bench v0.1, v0.2, and v0.3 are all active, versioned benchmarks. Their release materials remain available and runnable alongside one another.
 
+## v0.4.0 — Regulatory Variant Prioritization Pilot
+
+The next release carries the verified fixture, population and evolutionary evidence into candidate-matched regulatory prioritization. PlantCAD2-S recovers 18/34 held-out association signals versus 17/34 for the annotation baseline (two gains, one loss). Independent causal-SNP recovery remains unestimable.
+
+- [v0.1–v0.4 progression, benchmark figures and exact model evidence](docs/v0.4_release.md)
+- [Overview CPU/Colab notebook](notebooks/v0.4/popgenlm-v04-overview.ipynb) and [seven focused notebooks](notebooks/v0.4/)
+- [Model limits, blocked panels and verification](docs/v0.4_release.md)
+- [Genomes to AI release draft](docs/v0.4_genomes_to_ai.md)
+
+Eight public notebooks passed clean local CPU execution. Hosted Colab execution is not claimed. Raw Botanic outputs are omitted; all seven models/evidence sources remain documented. [Data terms](docs/v0.4_data_terms.md) distinguish code from provider-governed outputs. Previous releases stay active.
+
 ## v0.3.0 — evolutionary-evidence results benchmark
 
 Version 0.3 adds precomputed model-concordance, evolutionary-evidence, LD-sensitivity, genomic-context, and genotype-sample-quality results for 10,000 *Arabidopsis thaliana* variants. It does not rerun inference in the publication notebook.

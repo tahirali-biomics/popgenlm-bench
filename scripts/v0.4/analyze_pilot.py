@@ -187,10 +187,10 @@ worked = min(x.gene.unique())
 rank[(rank.gene == worked) & (rank.scope == "model_covered") & (rank["rank"] <= 5)].to_csv(
     out / "worked_locus_top5.tsv", sep="\t", index=False
 )
-import matplotlib
+import matplotlib  # noqa: E402 -- preserve audited production execution/order
 
 matplotlib.use("Agg")
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt  # noqa: E402 -- preserve audited production execution/order
 
 fig, axes = plt.subplots(1, 2, figsize=(13, 6))
 for ax, endpoint, title in zip(

@@ -18,9 +18,9 @@ import transformers.utils.import_utils as optional_imports
 # Genomic inference uses no vision. The inherited optional torchvision binary
 # is incompatible; disable only its discovery in this isolated process.
 optional_imports._torchvision_available = False
-from transformers import AutoModelForMaskedLM, AutoTokenizer
+from transformers import AutoModelForMaskedLM, AutoTokenizer  # noqa: E402 -- preserve audited production execution/order
 
-from popgenlm.regulatory import ALIASES, context, reverse_complement
+from popgenlm.regulatory import ALIASES, context, reverse_complement  # noqa: E402 -- preserve audited production execution/order
 
 
 def sha(p):
@@ -32,6 +32,7 @@ def main():
     p.add_argument("--run", required=True)
     p.add_argument("--checkpoint", required=True)
     p.add_argument("--smoke", action="store_true")
+    p.add_argument("--reference", default="/projects/ag-demeaux/tali/PopGenLM/data/reference/TAIR10.1_genomic.fna")
     p.add_argument("--chrom")
     p.add_argument("--batch", type=int, default=2)
     a = p.parse_args()
@@ -49,9 +50,7 @@ def main():
         x = x[x.chrom.astype(str) == a.chrom]
     seq = {}
     key = None
-    with Path(
-        "/projects/ag-demeaux/tali/PopGenLM/data/reference/TAIR10.1_genomic.fna"
-    ).open() as fasta:
+    with Path(a.reference).open() as fasta:
         for line in fasta:
             if line.startswith(">"):
                 key = line[1:].split()[0]

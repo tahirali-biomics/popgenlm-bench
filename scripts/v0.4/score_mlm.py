@@ -208,7 +208,7 @@ for length in lengths:
             done.write_text(json.dumps(summary, indent=2) + "\n")
         metadata.append(summary)
 versions = {}
-import importlib.metadata as m
+import importlib.metadata as m  # noqa: E402 -- preserve audited production execution/order
 
 for n in ["torch", "transformers", "numpy", "pandas", "mamba-ssm", "causal-conv1d"]:
     try:

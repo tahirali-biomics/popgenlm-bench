@@ -17,12 +17,12 @@ p.add_argument("--smoke", action="store_true")
 a = p.parse_args()
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 
-import numpy as np
-import pandas as pd
-import tensorflow as tf
+import numpy as np  # noqa: E402 -- preserve audited production execution/order
+import pandas as pd  # noqa: E402 -- preserve audited production execution/order
+import tensorflow as tf  # noqa: E402 -- preserve audited production execution/order
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "src"))
-from popgenlm.regulatory import ALIASES, reverse_complement
+from popgenlm.regulatory import ALIASES, reverse_complement  # noqa: E402 -- preserve audited production execution/order
 
 run = Path(a.run)
 out = run / "results/nemo_bnapus_transfer"
@@ -111,8 +111,8 @@ with open(root / "data/reference/TAIR10.1_genomic.fna") as f:
             seq[name].append(line.strip().upper())
 seq = {k: "".join(v) for k, v in seq.items()}
 # Mask all annotated nuclear CDS, matching the published prediction bundle.
-import gzip
-import re
+import gzip  # noqa: E402 -- preserve audited production execution/order
+import re  # noqa: E402 -- preserve audited production execution/order
 
 mask = {k: np.zeros(len(v), bool) for k, v in seq.items()}
 transcripts = {}

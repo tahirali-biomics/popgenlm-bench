@@ -70,7 +70,7 @@ resolution = {
     "used": "exact v0.3.0 fixture; historical G3B JSON contains a mistyped digest",
     "release_matches_current": hashlib.sha256(tagbytes).hexdigest() == actual,
 }
-import pysam
+import pysam  # noqa: E402 -- preserve audited production execution/order
 
 v = pysam.VariantFile(
     str(ROOT / "data/incoming/1001g_v3.1_desktop/1001genomes_snp-short-indel_only_ACGTN.vcf.gz")

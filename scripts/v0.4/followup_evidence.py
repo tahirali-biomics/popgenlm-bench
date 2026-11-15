@@ -180,7 +180,7 @@ for r in positive.itertuples():
     altcar = int((d > 0).sum())
     overlap = any(
         str(int(l.chrom)) == chrom and pos >= l.start - 60000 and pos <= l.end + 60000
-        for l in loci.itertuples()
+        for l in loci.itertuples()  # noqa: E741 -- preserve audited production execution/order
     )
     ex = old_ex[old_ex.variant_id == r.variant_id].iloc[0]
     reasons = []
