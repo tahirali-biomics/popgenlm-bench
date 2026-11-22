@@ -1,0 +1,2 @@
+model	split	n	pearson_r	pearson_r_squared	correlation_status	predictive_r_squared	rmse	mae	scope	training_repetitions
+nemo_native_reimplementation	test	300	0.6672267458847002	0.4451915304238863	defined	0.4315243691213414	0.7822110683062401	0.6131538558254848	development-only partial Figure 2D adaptation	1

@@ -1,0 +1,49 @@
+{
+  "status": "development-only; panel D partial adaptation",
+  "figure2_complete": false,
+  "panel": "D",
+  "organism": "Arabidopsis thaliana",
+  "model": "PopGenLM nemo native reimplementation",
+  "n": 300,
+  "training_fits": 1,
+  "evaluation_scope": "inspected development set; not independent",
+  "expression_target": "log10(median TPM + 0.1); transformed TPM-derived expression, not raw TPM",
+  "metrics": {
+    "pearson_r": 0.6672267458847002,
+    "pearson_r_squared": 0.4451915304238863,
+    "predictive_r_squared": 0.4315243691213414,
+    "rmse": 0.7822110683062401,
+    "mae": 0.6131538558254848
+  },
+  "source_gene_expression": "GEO GSE80744; 54-of-56 source condition selection not resolved; AT3G12510 remains without observed label",
+  "reserve_data_accessed": false,
+  "limitations": [
+    "one training fit",
+    "panels A-C incomplete",
+    "not exact paper reproduction",
+    "not independent evaluation"
+  ],
+  "files_sha256": {
+    "data/benchmarks/v0.5-development/figures/expression_native_arabidopsis.png": "34924e33f4682188548b8b3a92884de83c802e208e4d09586ea041f94a54d295",
+    "data/benchmarks/v0.5-development/figures/expression_native_arabidopsis.svg": "69b4e32f0efdc5aaae69797d8c45729e3484bea2b7d7cce926f59ec47158dd1a",
+    "data/benchmarks/v0.5-development/figures/expression_performance.png": "883d8a6a3b8cc944a56bb27bf67adcb603705dc577608cc1586a86ad29a48dc6",
+    "data/benchmarks/v0.5-development/figures/expression_performance.svg": "2fbea272d7fe0f164a8de111a19b93c50d005b396250e46461653aa72c719e34",
+    "data/benchmarks/v0.5-development/figures/expression_transfer_arabidopsis.png": "e556a1aeecd3fb1f9dfb935f3d658ef8993afc87871ad295387679882b7362ae",
+    "data/benchmarks/v0.5-development/figures/expression_transfer_arabidopsis.svg": "2a8db9f435d56a42dff26aa3f70dfda0215b1b912a73befc97cae14d4f957539",
+    "data/benchmarks/v0.5-development/figures/nemo_figure2_panel_d.png": "4e495529cb1efcc1ed11faf998440963abb7e123c25826803717ade306f1c125",
+    "data/benchmarks/v0.5-development/figures/nemo_figure2_panel_d.svg": "6655db0d5c0d518173b9e1f8b8d63bd3b4f4aa92827a18930c2541f3dbe7617b",
+    "data/benchmarks/v0.5-development/figures/paired_regulatory_effects.png": "b55a92bcd3471e131167eb85a544ceac5fe9db15c09f207ee46ecc219afcaf50",
+    "data/benchmarks/v0.5-development/figures/paired_regulatory_effects.svg": "36524e4b4ef462e846de641851e1ea9d3048fc34265be929cf0cdeb677fcd876",
+    "data/benchmarks/v0.5-development/figures/variant_prioritization.png": "ccb763f57a9f580fe45ab9658bfcc3faa377a0e4d1e7597eade04f4879968776",
+    "data/benchmarks/v0.5-development/figures/variant_prioritization.svg": "7214b6de214242f17498d4d779ed201409bcb3f2366dd0b57d39b78635994a61",
+    "data/benchmarks/v0.5-development/figures/worked_loci.png": "28c112d2496fbe1b45f4e900e13afe39986b65e53afd1ec5c9c8883f0b031996",
+    "data/benchmarks/v0.5-development/figures/worked_loci.svg": "3446c2e90a20bac7cbdaada36b574b7c6a2748305e35909e8ef1d3c66e05b884",
+    "data/benchmarks/v0.5-development/nemo_figure2_panel_d/caption.md": "1281a314e71df113def20c83704b3689daa6d38b764db5776fa8790148ee9a6d",
+    "data/benchmarks/v0.5-development/nemo_figure2_panel_d/panel_d_metrics.tsv": "f29f4b1a4085717ab7e423aa0f664c2a50b74cc4e4e03d08d87aa10178b63096",
+    "data/benchmarks/v0.5-development/nemo_figure2_panel_d/panel_d_plotting_data.tsv": "f2f27f2c0a9ab7d8522efbaf2d79186535a43cf4bc84ffbae526b249958fb7e6"
+  },
+  "source_code_sha256": {
+    "src/popgenlm/expression.py": "ee2ac7d4da002c60f3a5b30b142a461899997a3ecafe4f147c1f631da47f926e",
+    "scripts/v0.5/plot_nemo_figure2_partial.py": "938259624665203c3b5e5a197f09244b30d1a8949cb997603e9e309cee4e4841"
+  }
+}
