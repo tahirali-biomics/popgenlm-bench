@@ -1,0 +1,35 @@
+{
+  "status": "PASS_PUBLIC_PATH_CLEAN_LOCAL_EXECUTION",
+  "notebook_source_url": "https://raw.githubusercontent.com/tahirali-biomics/popgenlm-bench/8601f6eefa4bb111ecee5c64ac29c2269c2a49be/notebooks/v0.5/nemo_figure2_panel_d_public.ipynb",
+  "notebook_commit": "8601f6eefa4bb111ecee5c64ac29c2269c2a49be",
+  "notebook_sha256": "8c88528946acd1279712fc60c19b9ca6ed1e5a55bd8d7561485698ede48d1f7b",
+  "artifact_source_commit": "628e8d342608477c4f4967bb25d62fe976642459",
+  "python": "3.11.14",
+  "dependencies": {
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.8"
+  },
+  "anonymous_public_downloads": true,
+  "input_sha256": {
+    "panel_d_plotting_data.tsv": "f2f27f2c0a9ab7d8522efbaf2d79186535a43cf4bc84ffbae526b249958fb7e6",
+    "panel_d_metrics.tsv": "f29f4b1a4085717ab7e423aa0f664c2a50b74cc4e4e03d08d87aa10178b63096",
+    "plot_nemo_figure2_partial.py": "938259624665203c3b5e5a197f09244b30d1a8949cb997603e9e309cee4e4841",
+    "expression.py": "ee2ac7d4da002c60f3a5b30b142a461899997a3ecafe4f147c1f631da47f926e",
+    "requirements-v0.5-panel-d.txt": "766130426c85bc0e395d602d0fd1e16e5cca56a92e1576b56e8e707b61b94255"
+  },
+  "executed_notebook_sha256": "a512f04a52c9f68b2da6facbc597b21b92dee0984ae0a94b7877c4059173aaef",
+  "metrics": {
+    "n": 300,
+    "pearson_r": 0.6672267458847002,
+    "pearson_r_squared": 0.4451915304238863,
+    "predictive_r_squared": 0.4315243691213414,
+    "rmse": 0.7822110683062401,
+    "mae": 0.6131538558254848
+  },
+  "figure2_complete": false,
+  "public_colab_preview": "not checked",
+  "hosted_colab_execution": false,
+  "independent_researcher_execution": false,
+  "reserve_data_accessed": false
+}
